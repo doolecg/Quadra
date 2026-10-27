@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadra: milestone 1 guide</title>
+<style>
+  :root { --ground: #f4f5f6; --surface: #ffffff; --raised: #e9ebee; --ink: #1b1d21; --soft: #5a606b; --accent: #0b6e5f; --warn: #a3471b; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: 17px/1.55 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 48px 24px 96px; }
+  h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 8px; }
+  h2 { font-size: 1.5rem; margin: 64px 0 16px; }
+  h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p { margin: 0 0 12px; }
+  .status { color: var(--warn); font-weight: 600; margin-bottom: 32px; }
+  .box { background: var(--surface); border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .first { background: var(--raised); }
+  .first ul { margin: 8px 0 0; padding-left: 20px; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 10px; overflow: hidden; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; }
+  th { background: var(--raised); }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  .ms-head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+  .ms-head h3 { margin: 0; }
+  .state { color: var(--soft); font-weight: 600; }
+  .state.now { color: var(--accent); }
+  .state.done { color: var(--soft); text-decoration: line-through; }
+  ul.check { list-style: none; padding: 0; margin: 12px 0 0; }
+  ul.check li { padding: 4px 0 4px 30px; position: relative; }
+  ul.check li::before { content: ""; position: absolute; left: 0; top: 8px; width: 16px; height: 16px; border-radius: 4px; background: var(--raised); }
+  ul.check li.ticked::before { background: var(--accent); }
+  ul.check li.ticked { color: var(--soft); }
+  .why { color: var(--soft); font-size: 0.95rem; }
+  ol.pillars li { margin-bottom: 10px; }
+  .notes { margin-top: 16px; }
+  .notes label { display: block; font-size: 0.9rem; color: var(--soft); margin-bottom: 4px; }
+  .notes textarea { width: 100%; min-height: 64px; padding: 10px 12px; border: 0; border-radius: 8px; background: var(--ground); color: var(--ink); font: inherit; font-size: 0.95rem; resize: vertical; }
+  .notes textarea:focus { outline: 2px solid var(--accent); }
+  .bar { position: sticky; top: 0; z-index: 2; background: var(--ink); color: #fff; padding: 12px 24px; display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .bar span { font-size: 0.95rem; }
+  .bar button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 9px 16px; font: inherit; font-size: 0.95rem; cursor: pointer; }
+  .bar button.plain { background: transparent; color: #cfd3d9; }
+  nav { margin: 24px 0 0; color: var(--soft); font-size: 0.95rem; }
+  nav a { color: var(--accent); margin-right: 14px; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span>Write in any notes box. Then press Copy my notes and paste them to Claude.</span>
+  <span><button class="plain" id="clear">Clear notes</button> <button id="copy">Copy my notes</button></span>
+</div>
+
+<main>
+<h1>Milestone 1 "Shell and viewport"</h1>
+<p class="status">State: In progress: approved 2026-10-27. Step 1 checked. Step 2 (viewport prototype) is ready to test.</p>
+
+<div class="box first">
+  <strong>Read this first</strong>
+  <ul>
+    <li>Goal: a Quadra window that looks like mockup A, shows four working viewports that stay at 60 FPS with 10 million triangles, lets you create, select and move objects with Max's shortcuts, undo anything, and save and load USD.</li>
+    <li>First step is the viewport prototype. If wgpu cannot reach 60 FPS at 10M triangles, Claude stops and brings options before building anything else.</li>
+    <li>Out of scope: the modifier stack and Poly Edit (M2), materials and rendering (M3), animation (M4), scripting (M5). The time slider and track bar are drawn but do nothing yet.</li>
+    <li>You check every step as it lands. Each step's test is in section 3.</li>
+    <li>To change anything, write in the notes box under it, press Copy my notes, and paste to Claude.</li>
+  </ul>
+</div>
+
+<h2>1. Parts</h2>
+<div class="box">
+  <ul class="check">
+    <li><strong>Project setup:</strong> its own git repo, Cargo workspace, licence file, README with a Disclaimer section, Main Run and Dev Run configs.</li>
+    <li><strong>Viewport prototype:</strong> a bare wgpu window that draws a generated 10M-triangle scene (1,000 objects, 10% instanced) and logs frame times, so we measure before we build.</li>
+    <li><strong>Main window:</strong> the mockup A layout in egui with docking: menu bar, toolbar, Scene Explorer, command panel, time slider, track bar, status bar. Correct at 100% to 200% Windows scaling.</li>
+    <li><strong>Four viewports:</strong> Top, Front, Left, Perspective; wireframe and shaded modes; grid; our own view cube; orbit, pan, zoom, maximise.</li>
+    <li><strong>Create panel:</strong> standard primitives, lights, cameras and helpers, made by dragging in a viewport.</li>
+    <li><strong>Select and transform:</strong> click and box select, Scene Explorer selection, move, rotate and scale gizmos, snaps.</li>
+    <li><strong>Shortcuts and settings:</strong> the M1 rows of keymap.json, rebindable in the app; a settings page where every change applies at once and is saved.</li>
+    <li><strong>Undo:</strong> every edit goes through the command bus; unlimited undo and redo.</li>
+    <li><strong>Files:</strong> save and load the scene as USD.</li>
+    <li><strong>About and updates:</strong> About page with every third-party licence and the disclaimer; check GitHub releases for updates at start-up.</li>
+  </ul>
+  <div class="notes" data-key="parts"><label>Your notes on the parts</label><textarea></textarea></div>
+</div>
+
+<h2>2. Questions for doole</h2>
+<div class="box">
+  <ol>
+    <li>Which open-source licence? <span class="why">Answered 2026-10-27: Apache-2.0.</span></li>
+    <li>Make a new public GitHub repo "Quadra" under your account when M1 starts? <span class="why">Answered 2026-10-27: yes, public.</span></li>
+    <li>Names in the app: our own names from the start, or Max's names until a naming pass? <span class="why">Answered 2026-10-27: our own names, Max's name in each tooltip.</span></li>
+    <li>Trade mark check on "Quadra" (UK IPO and EUIPO): before M1 or before the first public release? <span class="why">Answered 2026-10-27: before the first public release.</span></li>
+  </ol>
+  <div class="notes" data-key="questions"><label>Your notes on the questions (your answers)</label><textarea></textarea></div>
+</div>
+
+<h2>3. How to test each step</h2>
+<div class="box">
+  <h3>Step 1: project setup (checked by doole 2026-10-27)</h3>
+  <ol>
+    <li>Open a terminal in <code>E:\REPOS\3D TOOLS\Quadra</code>.</li>
+    <li>Type <code>cargo run -p quadra_app</code> and press Enter.</li>
+    <li>You should see <code>Quadra 0.1.0</code> and a one-line licence notice. No window opens yet.</li>
+    <li>Open the folder in IntelliJ. The run list shows exactly two configs: Main Run and Dev Run. Dev Run prints the same two lines. Main Run works once the first commit is on <code>main</code>.</li>
+  </ol>
+  <h3>Step 2: viewport prototype</h3>
+  <ol>
+    <li>In the same terminal, type <code>cargo run --release -p quadra_vp_proto</code> and press Enter. The first build takes a few minutes.</li>
+    <li>A window opens behind your other windows. Click it in the taskbar. You should see about 1,000 coloured bumpy balls with the camera slowly circling them.</li>
+    <li>The terminal prints one line a second. The FPS number should be well above 60. Claude's run on 2026-10-27: about 1,660 FPS (0.6 ms a frame, worst 12 ms) on the RTX 5070 Ti.</li>
+    <li>Close the window. The last line is a summary of the whole run.</li>
+  </ol>
+  <p class="why">This is a best case: one simple shader and one view. The real viewport adds four views, the UI and wireframe, so expect a fraction of this, still far above 60.</p>
+</div>
+
+<h2>4. Review checklist (at the end of M1)</h2>
+<div class="box">
+  <ul class="check">
+    <li>Open the 10M-triangle test scene and orbit: the frame counter stays at 60 or more.</li>
+    <li>Start Quadra from cold: the viewport accepts input within 3 seconds.</li>
+    <li>Put mockup A and Quadra side by side: same layout and colours.</li>
+    <li>Create a box, sphere, light and camera; select, move, rotate and scale them using Max shortcuts.</li>
+    <li>Undo everything back to the empty scene, then redo it all.</li>
+    <li>Save as USD, close, reopen: the scene is the same.</li>
+    <li>Change a shortcut and a setting: both work at once and are still there after a restart.</li>
+  </ul>
+  <div class="notes" data-key="review"><label>Your notes on the review</label><textarea></textarea></div>
+</div>
+</main>
+
+<script>
+  const KEY = "quadra-milestone-1-notes";
+  const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+  const boxes = [...document.querySelectorAll(".notes")];
+  for (const box of boxes) {
+    const area = box.querySelector("textarea");
+    area.value = saved[box.dataset.key] || "";
+    area.addEventListener("input", () => {
+      saved[box.dataset.key] = area.value;
+      localStorage.setItem(KEY, JSON.stringify(saved));
+    });
+  }
+  document.getElementById("copy").addEventListener("click", async (e) => {
+    const lines = boxes
+      .filter((b) => b.querySelector("textarea").value.trim())
+      .map((b) => `[${b.querySelector("label").textContent.replace("Your notes on ", "")}]\n${b.querySelector("textarea").value.trim()}`);
+    const text = lines.length ? "Milestone 1 notes:\n\n" + lines.join("\n\n") : "Milestone 1 notes: none";
+    await navigator.clipboard.writeText(text);
+    e.target.textContent = "Copied";
+    setTimeout(() => (e.target.textContent = "Copy my notes"), 1500);
+  });
+  document.getElementById("clear").addEventListener("click", () => {
+    if (!confirm("Clear all your notes on this page?")) return;
+    localStorage.removeItem(KEY);
+    for (const b of boxes) b.querySelector("textarea").value = "";
+    for (const k in saved) delete saved[k];
+  });
+</script>
+</body>
+</html>

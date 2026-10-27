@@ -1,0 +1,4335 @@
+{
+ "source_urls": [
+  "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+  "https://help.autodesk.com/cloudhelp/2017/ENU/3DSMax/files/GUID-D65DE5FD-F859-4F66-9E14-F9A5C1016411.htm",
+  "https://help.autodesk.com/cloudhelp/2027/ENU/3DSMax-Tutorial/files/GUID-F9386A18-B2DE-4971-ADD2-6D22416E6F3B.htm",
+  "https://help.autodesk.com/cloudhelp/2024/ENU/3DSMax-Customizing/files/GUID-A1D1C3D4-3E7A-4269-8399-A9E5A9C9FEFF.htm",
+  "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-D65DE5FD-F859-4F66-9E14-F9A5C1016411.htm",
+  "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-CCD2C70B-52B4-4BF0-A5C0-74ECC591ACDD.htm",
+  "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-1962BD49-AAD7-43FA-871E-5C2742C047B8.htm"
+ ],
+ "generated": "2026-10-27",
+ "note": "Keys are the factory defaults on the Autodesk 3ds Max 2026 keyboard shortcut tables. Rows with verified=false are not confirmed by a fetched source. Second pass 2026-10-27: every non-mouse row compared with the fetched 2026 table, no key was wrong; hair, particle flow, ActiveShade, FFD, NURBS, Physique, Video Post, WeightTable, Crowd, Reaction Manager and PaintWeight rows added.",
+ "bindings": [
+  {
+   "action": "move",
+   "label": "Select and Move",
+   "keys": "W",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "rotate",
+   "label": "Select and Rotate",
+   "keys": "E",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "smart_scale",
+   "label": "Smart Scale",
+   "keys": "R",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "scale_cycle",
+   "label": "Scale Cycle",
+   "keys": "Ctrl+E",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "smart_place",
+   "label": "Smart Place",
+   "keys": "Y",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "smart_select",
+   "label": "Smart Select",
+   "keys": "Q",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "align",
+   "label": "Align",
+   "keys": "Alt+A",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quick_align",
+   "label": "Quick Align",
+   "keys": "Shift+A",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "normal_align",
+   "label": "Normal Align",
+   "keys": "Alt+N",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "clone",
+   "label": "Clone",
+   "keys": "Ctrl+V",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "delete",
+   "label": "Delete Objects",
+   "keys": "Del",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hold",
+   "label": "Hold",
+   "keys": "Ctrl+H",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "fetch",
+   "label": "Fetch",
+   "keys": "Ctrl+Alt+F",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "undo",
+   "label": "Undo Scene Operation",
+   "keys": "Ctrl+Z",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "redo",
+   "label": "Redo Scene Operation",
+   "keys": "Ctrl+Y",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "transform_typein",
+   "label": "Transform Type-In Dialog",
+   "keys": "F12",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "spacing_tool",
+   "label": "Spacing Tool",
+   "keys": "Shift+I",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "pivot_only",
+   "label": "Affect Pivot Only Mode",
+   "keys": "Insert",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "center_cycle",
+   "label": "Center Point Cycle",
+   "keys": "Alt+Shift+5",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "gizmo_size_down",
+   "label": "Transform Gizmo Size Down",
+   "keys": "-",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "gizmo_size_up",
+   "label": "Transform Gizmo Size Up",
+   "keys": "=",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "gizmo_x",
+   "label": "Transform Gizmo X Constraint",
+   "keys": "F5",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "gizmo_y",
+   "label": "Transform Gizmo Y Constraint",
+   "keys": "F6",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "gizmo_z",
+   "label": "Transform Gizmo Z Constraint",
+   "keys": "F7",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "gizmo_plane_cycle",
+   "label": "Transform Gizmo Plane Constraint Cycle",
+   "keys": "F8",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "file_new",
+   "label": "New Scene",
+   "keys": "Ctrl+N",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "file_open",
+   "label": "Open File",
+   "keys": "Ctrl+O",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "file_save",
+   "label": "Save File",
+   "keys": "Ctrl+S",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "file_save_as",
+   "label": "Save File As",
+   "keys": "Ctrl+Shift+S",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "file_save_incremental",
+   "label": "Save Incremental",
+   "keys": "Ctrl+Alt+S",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "group_attach",
+   "label": "Group Attach",
+   "keys": "Ctrl+U",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "camera_phys_from_view",
+   "label": "Create Physical Camera From View",
+   "keys": "Ctrl+C / Alt+Shift+C",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "camera_std_from_view",
+   "label": "Create Standard Camera From View",
+   "keys": "Ctrl+Alt+Shift+C",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "maxscript_listener",
+   "label": "MAXScript Listener",
+   "keys": "F11",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "asset_tracking",
+   "label": "Asset Tracking Toggle",
+   "keys": "Shift+T",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_all",
+   "label": "Select All",
+   "keys": "Ctrl+A",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_none",
+   "label": "Select None",
+   "keys": "Ctrl+D",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_invert",
+   "label": "Select Invert",
+   "keys": "Ctrl+I",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_similar",
+   "label": "Select Similar",
+   "keys": "Ctrl+Shift+A",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_by_name",
+   "label": "Select By Name",
+   "keys": "H",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_parent",
+   "label": "Select Ancestor",
+   "keys": "PgUp",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_child",
+   "label": "Select Child",
+   "keys": "PgDown",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "select_children",
+   "label": "Select Children",
+   "keys": "Shift+PgDown",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "selection_lock",
+   "label": "Selection Lock Toggle",
+   "keys": "Ctrl+Shift+N",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "cycle_selection_method",
+   "label": "Cycle Selection Method",
+   "keys": "Ctrl+F",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "window_crossing",
+   "label": "Window/Crossing Toggle",
+   "keys": "Shift+O",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "subobject_toggle",
+   "label": "Sub-object Selection Toggle",
+   "keys": "Ctrl+B",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_selection",
+   "label": "Hide Selection",
+   "keys": "Alt+H",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_unselected",
+   "label": "Hide Unselected",
+   "keys": "Alt+I",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "unhide_all",
+   "label": "Unhide All",
+   "keys": "Alt+U",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "isolate_selection",
+   "label": "Isolate Selection",
+   "keys": "Alt+Q",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "isolate_toggle",
+   "label": "Isolate Selection Toggle",
+   "keys": "Ctrl+Alt+Q",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "see_through",
+   "label": "Display as See-Through",
+   "keys": "Alt+X",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "global_search",
+   "label": "Launch Global Search",
+   "keys": "X",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "material_editor",
+   "label": "Material Editor Toggle",
+   "keys": "M",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "show_statistics",
+   "label": "Show Statistics Toggle",
+   "keys": "7",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "kbd_override",
+   "label": "Keyboard Shortcut Override Toggle",
+   "keys": "Ctrl+Alt+Shift+X",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_viewports",
+   "label": "Quad Menu Set: Viewports",
+   "keys": "V",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_windows",
+   "label": "Quad Menu Set: Windows",
+   "keys": "J",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_lock",
+   "label": "Quad Menu Lock",
+   "keys": "Spacebar",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "snaps_toggle",
+   "label": "Snaps Toggle",
+   "keys": "S",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "angle_snap",
+   "label": "Angle Snap Toggle",
+   "keys": "A",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "snap_cycle",
+   "label": "Cycle Active Snap Type",
+   "keys": "Alt+S",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "snap_axis_constraints",
+   "label": "Enable Axis Constraints in Snaps",
+   "keys": "Alt+F3",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "auto_key",
+   "label": "Auto Key Mode Toggle",
+   "keys": "N",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "set_keys",
+   "label": "Set Keys",
+   "keys": "K",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "time_back",
+   "label": "Backup Time One Unit",
+   "keys": ",",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "time_forward",
+   "label": "Forward Time One Unit",
+   "keys": ".",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "time_end",
+   "label": "Go to End Frame",
+   "keys": "End",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "time_start",
+   "label": "Go to Start Frame",
+   "keys": "Home",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "play",
+   "label": "Play Animation",
+   "keys": "/",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sound_toggle",
+   "label": "Sound Toggle",
+   "keys": "\\",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "render",
+   "label": "Render",
+   "keys": "Shift+Q / Shift+F9",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "render_last",
+   "label": "Render Last",
+   "keys": "F9",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "render_setup",
+   "label": "Render Setup",
+   "keys": "F10",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "env_dialog",
+   "label": "Environment Dialog Toggle",
+   "keys": "8",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "adv_lighting",
+   "label": "Advanced Lighting Panel",
+   "keys": "9",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "animated_sequence",
+   "label": "Create Animated Sequence File",
+   "keys": "Shift+V",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "trackview_param_editor",
+   "label": "Add/Edit Parameters (Track View)",
+   "keys": "Ctrl+1",
+   "context": "global",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "show_end_result",
+   "label": "Show End Result",
+   "keys": "Alt+`",
+   "context": "modifier_stack",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "subobject_1",
+   "label": "Sub-Object Level 1",
+   "keys": "1",
+   "context": "modifier_stack",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "subobject_2",
+   "label": "Sub-Object Level 2",
+   "keys": "2",
+   "context": "modifier_stack",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "subobject_3",
+   "label": "Sub-Object Level 3",
+   "keys": "3",
+   "context": "modifier_stack",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "subobject_4",
+   "label": "Sub-Object Level 4",
+   "keys": "4",
+   "context": "modifier_stack",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "subobject_5",
+   "label": "Sub-Object Level 5",
+   "keys": "5",
+   "context": "modifier_stack",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_front",
+   "label": "Front View",
+   "keys": "F",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_left",
+   "label": "Left View",
+   "keys": "L",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_top",
+   "label": "Top View",
+   "keys": "T",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_persp",
+   "label": "Perspective User View",
+   "keys": "P",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_ortho_user",
+   "label": "Orthographic User View",
+   "keys": "U",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_camera",
+   "label": "Camera View",
+   "keys": "C",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_light",
+   "label": "Spot/Directional Light View",
+   "keys": "Shift+4",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "view_home",
+   "label": "Home View",
+   "keys": "Alt+Home",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "maximize_viewport",
+   "label": "Maximize Viewport Toggle",
+   "keys": "Alt+W",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_extents_sel",
+   "label": "Zoom Extents Selected",
+   "keys": "Z",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_extents",
+   "label": "Zoom Extents",
+   "keys": "Ctrl+Alt+Z",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_extents_all",
+   "label": "Zoom Extents All",
+   "keys": "Shift+Ctrl+Z",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_in_2x",
+   "label": "Zoom In 2X",
+   "keys": "Ctrl+Alt+Shift+Z",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_mode",
+   "label": "Zoom Mode",
+   "keys": "Alt+Z",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_region",
+   "label": "Zoom Region Mode",
+   "keys": "Ctrl+W",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_in",
+   "label": "Zoom Viewport In",
+   "keys": "[ / Ctrl+=",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_out",
+   "label": "Zoom Viewport Out",
+   "keys": "] / Ctrl+-",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "pan_view",
+   "label": "Pan View",
+   "keys": "Ctrl+P",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "pan_viewport",
+   "label": "Pan Viewport",
+   "keys": "I",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "orbit_mode",
+   "label": "Orbit View Mode",
+   "keys": "Ctrl+R",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walkthrough",
+   "label": "WalkThrough View Mode",
+   "keys": "Up",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "undo_view",
+   "label": "Undo Viewport Operation",
+   "keys": "Shift+Z",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "redo_view",
+   "label": "Redo Viewport Operation",
+   "keys": "Shift+Y",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "redraw_all",
+   "label": "Redraw All Views",
+   "keys": "`",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "show_floating_dialogs",
+   "label": "Show Floating Dialogs",
+   "keys": "Ctrl+`",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "wire_smooth_toggle",
+   "label": "Wireframe / Smooth+Highlights Toggle",
+   "keys": "F3",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "edged_faces",
+   "label": "View Edged Faces Toggle",
+   "keys": "F4",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "shade_selected_faces",
+   "label": "Shade Selected Faces Toggle",
+   "keys": "F2",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "selection_bracket",
+   "label": "Show Selection Bracket Toggle",
+   "keys": "Shift+J",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "safe_frames",
+   "label": "Viewport Safe Frames Toggle",
+   "keys": "Shift+F",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "default_lights_toggle",
+   "label": "Illuminate with Default / Scene Lights Toggle",
+   "keys": "Ctrl+L",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quality_high",
+   "label": "Viewport Lighting and Shadows: High Quality",
+   "keys": "Shift+F3",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "disable_viewport",
+   "label": "Disable Viewport",
+   "keys": "Ctrl+Shift+D",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "expert_mode",
+   "label": "Expert Mode Toggle",
+   "keys": "Ctrl+Alt+X",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "adaptive_degradation",
+   "label": "Adaptive Degradation Toggle",
+   "keys": "O",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "viewport_background",
+   "label": "Viewport Background",
+   "keys": "Alt+B",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "update_background",
+   "label": "Update Background Image",
+   "keys": "Alt+Shift+Ctrl+B",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "highlights_toggle",
+   "label": "Selection/Preview Highlights Toggle",
+   "keys": "Alt+J",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_grids",
+   "label": "Hide Grids Toggle",
+   "keys": "G",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_geometry",
+   "label": "Hide Geometry Toggle",
+   "keys": "Shift+G",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_shapes",
+   "label": "Hide Shapes Toggle",
+   "keys": "Shift+S",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_lights",
+   "label": "Hide Lights Toggle",
+   "keys": "Shift+L",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_cameras",
+   "label": "Hide Cameras Toggle",
+   "keys": "Shift+C",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_helpers",
+   "label": "Hide Helpers Toggle",
+   "keys": "Shift+H",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_spacewarps",
+   "label": "Hide Space Warps Toggle",
+   "keys": "Shift+W",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hide_particles",
+   "label": "Hide Particle Systems Toggle",
+   "keys": "Shift+P",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "virtual_viewport",
+   "label": "Virtual Viewport Toggle",
+   "keys": "NumPad /",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "vv_pan_up",
+   "label": "Virtual Viewport Pan Up",
+   "keys": "NumPad 8",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "vv_pan_down",
+   "label": "Virtual Viewport Pan Down",
+   "keys": "NumPad 2",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "vv_pan_left",
+   "label": "Virtual Viewport Pan Left",
+   "keys": "NumPad 4",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "vv_pan_right",
+   "label": "Virtual Viewport Pan Right",
+   "keys": "NumPad 6",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "vv_zoom_in",
+   "label": "Virtual Viewport Zoom In",
+   "keys": "NumPad +",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "vv_zoom_out",
+   "label": "Virtual Viewport Zoom Out",
+   "keys": "NumPad -",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "steeringwheels_toggle",
+   "label": "Toggle SteeringWheels",
+   "keys": "Shift+W",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "steeringwheels_tour",
+   "label": "Tour Building Wheel",
+   "keys": "Shift+Ctrl+J",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "steeringwheels_walk_slower",
+   "label": "Decrease Walk Speed",
+   "keys": "Shift+Ctrl+,",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "steeringwheels_walk_faster",
+   "label": "Increase Walk Speed",
+   "keys": "Shift+Ctrl+.",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "viewcube_home",
+   "label": "ViewCube Home",
+   "keys": "Alt+Ctrl+H",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "viewcube_toggle",
+   "label": "Toggle ViewCube Visibility",
+   "keys": "Alt+Ctrl+V",
+   "context": "viewport",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_forward",
+   "label": "Forward",
+   "keys": "W / Up",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_back",
+   "label": "Back",
+   "keys": "S / Down",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_left",
+   "label": "Left",
+   "keys": "A / Left",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_right",
+   "label": "Right",
+   "keys": "D / Right",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_up",
+   "label": "Up",
+   "keys": "E / Shift+Up",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_down",
+   "label": "Down",
+   "keys": "C / Shift+Down",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_accel",
+   "label": "Accelerate Toggle",
+   "keys": "Q",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_decel",
+   "label": "Decelerate Toggle",
+   "keys": "Z",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_step_down",
+   "label": "Decrease Step Size",
+   "keys": "[",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_step_up",
+   "label": "Increase Step Size",
+   "keys": "]",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_step_reset",
+   "label": "Reset Step Size",
+   "keys": "Alt+[",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_level",
+   "label": "Level",
+   "keys": "Shift+Spacebar",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "walk_lock_rot",
+   "label": "Lock Vertical Rotation",
+   "keys": "Spacebar",
+   "context": "walkthrough",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_animation",
+   "label": "Quad Menu Set: Animation",
+   "keys": "Alt+RMB",
+   "context": "quad_menu",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_modeling",
+   "label": "Quad Menu Set: Modeling",
+   "keys": "Ctrl+RMB",
+   "context": "quad_menu",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_snap",
+   "label": "Quad Menu Set: Snap",
+   "keys": "Shift+RMB",
+   "context": "quad_menu",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_lighting_render",
+   "label": "Quad Menu Set: Lighting / Render",
+   "keys": "Ctrl+Alt+RMB",
+   "context": "quad_menu",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_custom_1",
+   "label": "Quad Menu Set: Custom 1",
+   "keys": "Ctrl+Shift+RMB",
+   "context": "quad_menu",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_custom_2",
+   "label": "Quad Menu Set: Custom 2",
+   "keys": "Ctrl+Alt+Shift+RMB",
+   "context": "quad_menu",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_extrude_mode",
+   "label": "Extrude Mode",
+   "keys": "Shift+E",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_extrude_face",
+   "label": "Extrude Face (Poly)",
+   "keys": "Alt+Shift+E",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_extrude_spline",
+   "label": "Extrude along Spline Mode",
+   "keys": "Ctrl+Alt+Shift+E",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_bevel",
+   "label": "Bevel Mode",
+   "keys": "Ctrl+Shift+B",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_chamfer",
+   "label": "Chamfer Mode",
+   "keys": "Ctrl+Shift+C",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_connect",
+   "label": "Connect",
+   "keys": "Shift+Ctrl+E",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_cut",
+   "label": "Cut",
+   "keys": "Alt+C",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_quickslice",
+   "label": "Quickslice Mode",
+   "keys": "Shift+Ctrl+Q",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_target_weld",
+   "label": "Target Weld Mode",
+   "keys": "Shift+Ctrl+W",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_collapse",
+   "label": "Collapse",
+   "keys": "Ctrl+Alt+C",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_attach",
+   "label": "Attach",
+   "keys": "Alt+Shift+D",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_detach",
+   "label": "Detach",
+   "keys": "Ctrl+Alt+D",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_break",
+   "label": "Break",
+   "keys": "Shift+R",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_cap",
+   "label": "Cap",
+   "keys": "Alt+P",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_make_planar",
+   "label": "Make Planar",
+   "keys": "Alt+M",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_meshsmooth",
+   "label": "MeshSmooth",
+   "keys": "Ctrl+M",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_repeat_last",
+   "label": "Repeat Last Operation",
+   "keys": ";",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_constrain_edges",
+   "label": "Constrain to Edges",
+   "keys": "Shift+X",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_soft_sel_mode",
+   "label": "Edit Soft Selection Mode",
+   "keys": "B",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_soft_sel_toggle",
+   "label": "Use Soft Selection",
+   "keys": "Shift+B",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_grow",
+   "label": "Grow Selection",
+   "keys": "Ctrl+PgUp / Ctrl+Up",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_shrink",
+   "label": "Shrink Selection",
+   "keys": "Ctrl+PgDown / Ctrl+Down",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_loop",
+   "label": "Select Sub-object Loop",
+   "keys": "Alt+L",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_ring",
+   "label": "Select Sub-object Ring",
+   "keys": "Alt+R",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_ignore_backfacing",
+   "label": "Ignore Backfacing in Selections",
+   "keys": "Alt+Shift+X",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_hide",
+   "label": "Hide",
+   "keys": "Alt+H",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_hide_unselected",
+   "label": "Hide Unselected",
+   "keys": "Alt+I",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_unhide_all",
+   "label": "Unhide All",
+   "keys": "Alt+U",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_geom_sel_visibility",
+   "label": "Geometry Selection Visibility Toggle (Projection modifier)",
+   "keys": "Alt+G",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_swift_loop",
+   "label": "PolyTools: Swift Loop",
+   "keys": "Alt+1",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_set_flow",
+   "label": "PolyTools: Set Flow",
+   "keys": "Alt+2",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_insert_loop",
+   "label": "PolyTools: Insert Loop",
+   "keys": "Alt+3",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_polyshift",
+   "label": "PolyTools: PolyShift Move",
+   "keys": "Alt+4",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_spin_edge",
+   "label": "PolyTools: Spin Edge",
+   "keys": "Alt+5",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_straighten",
+   "label": "PolyTools: Straighten Loops",
+   "keys": "Alt+Shift+2",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_circle",
+   "label": "PolyTools: Circle Loops",
+   "keys": "Alt+Shift+3",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "polytool_geo_poly",
+   "label": "PolyTools: Geo Poly",
+   "keys": "Alt+Shift+4",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "spline_refine",
+   "label": "Refine (Editable Spline)",
+   "keys": "Alt+Shift+1",
+   "context": "editable_poly",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "em_edge_turn",
+   "label": "Edge Turn",
+   "keys": "Ctrl+T",
+   "context": "editable_mesh",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "em_weld_selected",
+   "label": "Weld Selected",
+   "keys": "Alt+Shift+W",
+   "context": "editable_mesh",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_normal_level",
+   "label": "Normal Level",
+   "keys": "1",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_vertex_level",
+   "label": "Vertex Level",
+   "keys": "2",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_edge_level",
+   "label": "Edge Level",
+   "keys": "3",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_face_level",
+   "label": "Face Level",
+   "keys": "4",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_object_level",
+   "label": "Object Level",
+   "keys": "5",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_break",
+   "label": "Break Normals",
+   "keys": "Shift+R",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_unify",
+   "label": "Unify Normals",
+   "keys": "U",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_reset",
+   "label": "Reset Normals",
+   "keys": "R",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_specify",
+   "label": "Specify Normals",
+   "keys": "S",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_explicit",
+   "label": "Make Explicit",
+   "keys": "E",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_copy",
+   "label": "Copy Normal",
+   "keys": "Ctrl+C",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "en_paste",
+   "label": "Paste Normal",
+   "keys": "Ctrl+V",
+   "context": "edit_normals",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_edit",
+   "label": "Edit UVW's",
+   "keys": "Ctrl+E",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_move",
+   "label": "Texture Vertex Move Mode",
+   "keys": "W",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_rotate",
+   "label": "Texture Vertex Rotate Mode",
+   "keys": "E",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_scale",
+   "label": "Texture Vertex Scale Mode",
+   "keys": "R",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_freeform",
+   "label": "Freeform Mode",
+   "keys": "Q",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_element_mode",
+   "label": "TV Element Mode",
+   "keys": "4",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_loop",
+   "label": "TV Loop Select",
+   "keys": "Alt+L",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_ring",
+   "label": "TV Ring Select",
+   "keys": "Alt+R",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_expand",
+   "label": "Expand Selection",
+   "keys": "Ctrl+PgUp / Ctrl+Up",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_contract",
+   "label": "Contract Selection",
+   "keys": "Ctrl+PgDown / Ctrl+Down",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_peel",
+   "label": "Unfold3D Peel",
+   "keys": "Ctrl+Q",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_pack",
+   "label": "Pack",
+   "keys": "Shift+A",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_relax",
+   "label": "Relax",
+   "keys": "Shift+X",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_stitch",
+   "label": "Stitch",
+   "keys": "Shift+S",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_snap",
+   "label": "Snap",
+   "keys": "S",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_grid",
+   "label": "Grid Visible",
+   "keys": "G",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_show_map",
+   "label": "Show Map",
+   "keys": "Shift+M",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_quick_planar",
+   "label": "Quick Planar Map",
+   "keys": "Shift+Q",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_cyl_map",
+   "label": "Cylindrical Mapping",
+   "keys": "Shift+C",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_planar_map",
+   "label": "Planar map faces/patches",
+   "keys": "Enter",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_align_h",
+   "label": "Align Horizontal",
+   "keys": "Shift+H",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_align_v",
+   "label": "Align Vertical",
+   "keys": "Shift+V",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_align_edge",
+   "label": "Align to Edge",
+   "keys": "Shift+E",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_straighten",
+   "label": "Straighten Edges",
+   "keys": "Shift+F",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_freeze",
+   "label": "Freeze Selected",
+   "keys": "Ctrl+F",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_unfreeze",
+   "label": "Unfreeze All",
+   "keys": "Ctrl+Shift+F",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_lock",
+   "label": "Lock selected vertices",
+   "keys": "Ctrl+L",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_rot_plus90",
+   "label": "Rotate +90",
+   "keys": "Ctrl+Left",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_rot_minus90",
+   "label": "Rotate -90",
+   "keys": "Ctrl+Right",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_pelt_seam_add",
+   "label": "Edge Selection to Pelt Seam (Add)",
+   "keys": "Shift+P",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_pelt_seam_replace",
+   "label": "Edge Selection to Pelt Seam (Replace)",
+   "keys": "Ctrl+Shift+P",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_show_seams",
+   "label": "Show Seams In Viewport",
+   "keys": "Alt+E",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_options",
+   "label": "Unwrap Options",
+   "keys": "O",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_update_map",
+   "label": "Update Map",
+   "keys": "U",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_zoom_gizmo",
+   "label": "Zoom To Gizmo",
+   "keys": "Shift+Spacebar",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_flatten_smoothing",
+   "label": "Flatten by Smoothing Group",
+   "keys": "Ctrl+Shift+S",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_copy",
+   "label": "Copy",
+   "keys": "Ctrl+C",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_paste",
+   "label": "Paste",
+   "keys": "Ctrl+V",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_weld_selected",
+   "label": "Texture Vertex Weld Selected",
+   "keys": "Alt+Shift+W",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_target_weld",
+   "label": "Texture Vertex Target Weld",
+   "keys": "Shift+Ctrl+W",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_break",
+   "label": "Break Selected Vertices",
+   "keys": "Shift+R",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "uv_soft_sel",
+   "label": "Soft Selection",
+   "keys": "Shift+B",
+   "context": "unwrap_uvw",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_add_keys",
+   "label": "Add/Remove Keys",
+   "keys": "K",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_move_keys",
+   "label": "Move Keys",
+   "keys": "M",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_snap_frames",
+   "label": "Snap Frames",
+   "keys": "S",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_lock_tangents",
+   "label": "Lock Tangents Toggle",
+   "keys": "L",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_assign_controller",
+   "label": "Assign Controller",
+   "keys": "C",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_copy_controller",
+   "label": "Copy Controller",
+   "keys": "Ctrl+C",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_paste_controller",
+   "label": "Paste Controller",
+   "keys": "Ctrl+V",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_unique_controller",
+   "label": "Make Controller Unique",
+   "keys": "U",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_ease_curve",
+   "label": "Apply Ease Curve",
+   "keys": "Ctrl+E",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_multiplier_curve",
+   "label": "Apply Multiplier Curve",
+   "keys": "Ctrl+M",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_expand_object",
+   "label": "Expand Object Toggle",
+   "keys": "O",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_expand_track",
+   "label": "Expand Track Toggle",
+   "keys": "Enter / T",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_lock_selection",
+   "label": "Lock Selection",
+   "keys": "Ctrl+L",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_filters",
+   "label": "Filters",
+   "keys": "Alt+F",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_frame_h",
+   "label": "Frame Horizontal Extents",
+   "keys": "Ctrl+Alt+Z",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_frame_h_keys",
+   "label": "Frame Horizontal Extents Keys",
+   "keys": "Ctrl+Alt+Shift+Z",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_nudge_left",
+   "label": "Nudge Keys Left",
+   "keys": "Left",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_nudge_right",
+   "label": "Nudge Keys Right",
+   "keys": "Right",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_retime_left",
+   "label": "Retime Move Left",
+   "keys": "Ctrl+Left",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_retime_right",
+   "label": "Retime Move Right",
+   "keys": "Ctrl+Right",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_highlight_up",
+   "label": "Move Highlight Up",
+   "keys": "Up",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_highlight_down",
+   "label": "Move Highlight Down",
+   "keys": "Down",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_scroll_up",
+   "label": "Scroll Up",
+   "keys": "Ctrl+Up",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_scroll_down",
+   "label": "Scroll Down",
+   "keys": "Ctrl+Down",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_pan",
+   "label": "Pan",
+   "keys": "Ctrl+P",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_zoom",
+   "label": "Zoom",
+   "keys": "Alt+Z",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_zoom_region",
+   "label": "Zoom Region",
+   "keys": "Ctrl+W",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_select_all",
+   "label": "Select All",
+   "keys": "Ctrl+A",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_select_none",
+   "label": "Select None",
+   "keys": "Ctrl+D",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_select_invert",
+   "label": "Select Invert",
+   "keys": "Ctrl+I",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "tv_select_children",
+   "label": "Select Children",
+   "keys": "Shift+PgDown",
+   "context": "trackview",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_add_bookmark",
+   "label": "Add Bookmark",
+   "keys": "B",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_display_floater",
+   "label": "Display Floater",
+   "keys": "D",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_filters",
+   "label": "Filters",
+   "keys": "Alt+F",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_free_all",
+   "label": "Free All",
+   "keys": "Alt+A",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_free_selected",
+   "label": "Free Selected",
+   "keys": "Alt+S",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_hide_selected",
+   "label": "Hide Selected",
+   "keys": "Alt+H",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_invert",
+   "label": "Invert Selected Nodes",
+   "keys": "Ctrl+I",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_move_children",
+   "label": "Move Children",
+   "keys": "Alt+C",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_next_bookmark",
+   "label": "Next Bookmark",
+   "keys": "Right",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_prev_bookmark",
+   "label": "Previous Bookmark",
+   "keys": "Left",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_refresh",
+   "label": "Refresh View",
+   "keys": "Ctrl+U",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_rename",
+   "label": "Rename Object",
+   "keys": "F2",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_select_all",
+   "label": "Select All Nodes",
+   "keys": "Ctrl+A",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_select_children",
+   "label": "Select Children",
+   "keys": "Shift+PgDown",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_select_none",
+   "label": "Select None",
+   "keys": "Ctrl+D",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_grid",
+   "label": "Show Grid",
+   "keys": "G",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_shrink",
+   "label": "Toggle Shrink",
+   "keys": "Shift+S",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_connect",
+   "label": "Use Connect Tool",
+   "keys": "C",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_pan",
+   "label": "Use Pan Tool",
+   "keys": "Ctrl+P",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_select_tool",
+   "label": "Use Select Tool",
+   "keys": "Q",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_zoom_region",
+   "label": "Use Zoom Region Tool",
+   "keys": "Ctrl+W",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_zoom",
+   "label": "Use Zoom Tool",
+   "keys": "Alt+Z",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_zoom_extents",
+   "label": "Zoom Extents",
+   "keys": "Ctrl+Alt+Z",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sv_zoom_selected",
+   "label": "Zoom Selected Extents",
+   "keys": "Z",
+   "context": "schematic",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "me_assign",
+   "label": "Assign Material to Selection",
+   "keys": "A",
+   "context": "material_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "me_get_material",
+   "label": "Get Material",
+   "keys": "O",
+   "context": "material_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "me_back_sibling",
+   "label": "Go Backward to Sibling",
+   "keys": "Left",
+   "context": "material_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "me_fwd_sibling",
+   "label": "Go Forward to Sibling",
+   "keys": "Right",
+   "context": "material_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "me_parent",
+   "label": "Go to Parent",
+   "keys": "Up",
+   "context": "material_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "me_make_preview",
+   "label": "Make Preview",
+   "keys": "F9",
+   "context": "material_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_assign",
+   "label": "Assign Material to Selection",
+   "keys": "A",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_delete",
+   "label": "Delete Selected",
+   "keys": "Del",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_hide_unused",
+   "label": "Hide Unused Nodeslots",
+   "keys": "H",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_layout_all",
+   "label": "Lay Out All",
+   "keys": "L",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_layout_children",
+   "label": "Lay Out Children",
+   "keys": "C",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_browser",
+   "label": "Material/Map Browser",
+   "keys": "O",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_move_children",
+   "label": "Move Children",
+   "keys": "Alt+C",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_navigator",
+   "label": "Navigator",
+   "keys": "N",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_pan_selected",
+   "label": "Pan to Selected",
+   "keys": "Alt+P",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_pan_tool",
+   "label": "Pan Tool",
+   "keys": "Ctrl+P",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_param_editor",
+   "label": "Parameter Editor",
+   "keys": "P",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_rename",
+   "label": "Rename",
+   "keys": "F2",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_select_all",
+   "label": "Select All",
+   "keys": "Ctrl+A",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_select_children",
+   "label": "Select Children",
+   "keys": "Shift+PgDown",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_select_invert",
+   "label": "Select Invert",
+   "keys": "Ctrl+I",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_select_none",
+   "label": "Select None",
+   "keys": "Ctrl+D",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_select_tool",
+   "label": "Select Tool",
+   "keys": "Q",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_select_tree",
+   "label": "Select Tree",
+   "keys": "Ctrl+T",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_grid",
+   "label": "Show Grid",
+   "keys": "G",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_update_previews",
+   "label": "Update Selected Previews",
+   "keys": "U",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_zoom_extents",
+   "label": "Zoom Extents",
+   "keys": "Ctrl+Alt+Z",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_zoom_selected",
+   "label": "Zoom Extents Selected",
+   "keys": "Z",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_zoom_region",
+   "label": "Zoom Region Tool",
+   "keys": "Ctrl+W",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "sme_zoom_tool",
+   "label": "Zoom Tool",
+   "keys": "Alt+Z",
+   "context": "slate_editor",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_copy",
+   "label": "Copy",
+   "keys": "Ctrl+C",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_paste",
+   "label": "Paste",
+   "keys": "Ctrl+V",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_paste_opposite",
+   "label": "Paste Opposite",
+   "keys": "Ctrl+Shift+V",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_fix_graphs",
+   "label": "Fix Graphs",
+   "keys": "Alt+Ctrl+F",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_move_all_collapse",
+   "label": "Move All Collapse",
+   "keys": "Alt+M",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_reset_limb_keys",
+   "label": "Reset All Limb Keys",
+   "keys": "Alt+K",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_scale_in_transform",
+   "label": "Scale In Transform",
+   "keys": "Alt+Ctrl+E",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_set_anim_range",
+   "label": "Set Animation Range",
+   "keys": "Alt+R",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_set_key",
+   "label": "Set Key",
+   "keys": "K",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_toggle_keys",
+   "label": "Trackbar Toggle Biped Keys",
+   "keys": "Alt+T",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_tv_footstep_end",
+   "label": "Track View Select End of Footsteps",
+   "keys": "Alt+D",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_tv_footstep_all",
+   "label": "Track View Select Entire Footstep",
+   "keys": "Alt+S",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "bp_tv_footstep_start",
+   "label": "Track View Select Start of Footsteps",
+   "keys": "Alt+A",
+   "context": "biped",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "orbit_mouse",
+   "label": "Orbit view (current orbit mode)",
+   "keys": "Alt",
+   "context": "viewport",
+   "mouse": "MMB drag",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-D65DE5FD-F859-4F66-9E14-F9A5C1016411.htm",
+   "verified": true
+  },
+  {
+   "action": "pan_mouse",
+   "label": "Pan view",
+   "keys": "",
+   "context": "viewport",
+   "mouse": "MMB drag",
+   "source": "https://help.autodesk.com/cloudhelp/2027/ENU/3DSMax-Tutorial/files/GUID-F9386A18-B2DE-4971-ADD2-6D22416E6F3B.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_wheel",
+   "label": "Zoom view",
+   "keys": "",
+   "context": "viewport",
+   "mouse": "Mouse wheel",
+   "source": "https://help.autodesk.com/cloudhelp/2027/ENU/3DSMax-Tutorial/files/GUID-F9386A18-B2DE-4971-ADD2-6D22416E6F3B.htm",
+   "verified": true
+  },
+  {
+   "action": "quad_open",
+   "label": "Open quad menu",
+   "keys": "",
+   "context": "viewport",
+   "mouse": "RMB click",
+   "source": "https://help.autodesk.com/cloudhelp/2024/ENU/3DSMax-Customizing/files/GUID-A1D1C3D4-3E7A-4269-8399-A9E5A9C9FEFF.htm",
+   "verified": true
+  },
+  {
+   "action": "orbit_exit",
+   "label": "Leave Orbit mode",
+   "keys": "",
+   "context": "viewport",
+   "mouse": "RMB click",
+   "source": "https://help.autodesk.com/cloudhelp/2027/ENU/3DSMax-Tutorial/files/GUID-F9386A18-B2DE-4971-ADD2-6D22416E6F3B.htm",
+   "verified": true
+  },
+  {
+   "action": "zoom_mouse_ctrl_alt",
+   "label": "Zoom view by dragging",
+   "keys": "Ctrl+Alt",
+   "context": "viewport",
+   "mouse": "MMB drag",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-CCD2C70B-52B4-4BF0-A5C0-74ECC591ACDD.htm",
+   "verified": true
+  },
+  {
+   "action": "select_click",
+   "label": "Select object under cursor",
+   "keys": "",
+   "context": "viewport",
+   "mouse": "LMB click",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-1962BD49-AAD7-43FA-871E-5C2742C047B8.htm",
+   "verified": true
+  },
+  {
+   "action": "select_add",
+   "label": "Add to selection",
+   "keys": "Ctrl",
+   "context": "viewport",
+   "mouse": "LMB click",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-1962BD49-AAD7-43FA-871E-5C2742C047B8.htm",
+   "verified": true
+  },
+  {
+   "action": "select_remove",
+   "label": "Remove from selection",
+   "keys": "Alt",
+   "context": "viewport",
+   "mouse": "LMB click",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-1962BD49-AAD7-43FA-871E-5C2742C047B8.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_extrude_drag",
+   "label": "Extrude polygon (Move tool active)",
+   "keys": "Shift",
+   "context": "editable_poly",
+   "mouse": "LMB drag",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_clone_drag",
+   "label": "Clone polygon (Move tool active)",
+   "keys": "Ctrl+Shift",
+   "context": "editable_poly",
+   "mouse": "LMB drag",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ep_inset_drag",
+   "label": "Inset polygon (Scale tool active)",
+   "keys": "Shift",
+   "context": "editable_poly",
+   "mouse": "LMB drag",
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_attenuate",
+   "label": "Attenuate",
+   "keys": "Shift+Ctrl+A",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush",
+   "label": "Brush",
+   "keys": "Ctrl+B",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush_clump",
+   "label": "Brush Clump",
+   "keys": "Shift+Ctrl+4",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush_puff",
+   "label": "Brush Puff",
+   "keys": "Shift+Ctrl+3",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush_rotate",
+   "label": "Brush Rotate",
+   "keys": "Shift+Ctrl+5",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush_scale",
+   "label": "Brush Scale",
+   "keys": "Shift+Ctrl+6",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush_stand",
+   "label": "Brush Stand",
+   "keys": "Shift+Ctrl+2",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_brush_translate",
+   "label": "Brush Translate",
+   "keys": "Shift+Ctrl+1",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_clump",
+   "label": "Clump",
+   "keys": "Ctrl+M",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_cut",
+   "label": "Cut",
+   "keys": "Alt+C",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_expand_selection",
+   "label": "Expand Selection",
+   "keys": "Ctrl+PgUp, Ctrl+Up",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_guide",
+   "label": "Guide",
+   "keys": "Ctrl+2",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_hide_selected",
+   "label": "Hide Selected",
+   "keys": "Alt+H",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_ignore_back",
+   "label": "Ignore Back",
+   "keys": "Alt+Shift+X",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_invert_selection",
+   "label": "Invert Selection",
+   "keys": "Ctrl+I",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_lock",
+   "label": "Lock",
+   "keys": "Ctrl+L",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_merge_hairgroups",
+   "label": "Merge Hairgroups",
+   "keys": "Shift+Ctrl+=",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_pop_selected",
+   "label": "Pop Selected",
+   "keys": "Shift+Ctrl+P",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_pop_zerosized",
+   "label": "Pop Zerosized",
+   "keys": "Shift+Ctrl+Z",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_puff",
+   "label": "Puff",
+   "keys": "Ctrl+P",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_recomb",
+   "label": "Recomb",
+   "keys": "Shift+Ctrl+M",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_reset_rest",
+   "label": "Reset Rest",
+   "keys": "Shift+Ctrl+T",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_root",
+   "label": "Root",
+   "keys": "Ctrl+4",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_rotate",
+   "label": "Rotate",
+   "keys": "E",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_rotate_selection",
+   "label": "Rotate Selection",
+   "keys": "Shift+Ctrl+R",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_scale",
+   "label": "Scale",
+   "keys": "R",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_select",
+   "label": "Select",
+   "keys": "Q",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_show_hidden",
+   "label": "Show Hidden",
+   "keys": "Alt+U",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_soft_falloff",
+   "label": "Soft Falloff",
+   "keys": "Shift+Ctrl+F",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_split_hairgroups",
+   "label": "Split Hairgroups",
+   "keys": "Shift+Ctrl+-",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_stand",
+   "label": "Stand",
+   "keys": "Ctrl+N",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_tip",
+   "label": "Tip",
+   "keys": "Ctrl+1",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_toggle_collisions",
+   "label": "Toggle Collisions",
+   "keys": "Shift+Ctrl+C",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_toggle_hairs",
+   "label": "Toggle Hairs",
+   "keys": "Shift+Ctrl+I",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_translate",
+   "label": "Translate",
+   "keys": "Ctrl+T",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_undo",
+   "label": "Undo",
+   "keys": "Ctrl+Z",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_unlock",
+   "label": "Unlock",
+   "keys": "Ctrl+Shift+L",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "hair_verts",
+   "label": "Verts",
+   "keys": "Ctrl+3",
+   "context": "hair",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_clean_up_particle_flow",
+   "label": "Clean Up Particle Flow",
+   "keys": "Alt+Ctrl+P",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_copy_selected_in_particle_view",
+   "label": "Copy Selected In Particle View",
+   "keys": "Ctrl+C",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_open_pflow_preset_manager_dialog",
+   "label": "Open PFlow Preset Manager dialog",
+   "keys": "Alt+Ctrl+M",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_particle_view_toggle",
+   "label": "Particle View Toggle",
+   "keys": "6",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_paste_in_particle_view",
+   "label": "Paste In Particle View",
+   "keys": "Ctrl+V",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_repair_pflow_cache_system",
+   "label": "Repair PFlow Cache System",
+   "keys": "Alt+Ctrl+C",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_reset_particle_view",
+   "label": "Reset Particle View",
+   "keys": "Alt+Ctrl+R",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_select_all_in_particle_view",
+   "label": "Select All In Particle View",
+   "keys": "Ctrl+A",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_selected_particle_emission_toggle",
+   "label": "Selected Particle Emission Toggle",
+   "keys": "Shift+;",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_synchronize_particle_flow_layers",
+   "label": "Synchronize Particle Flow Layers",
+   "keys": "Alt+Ctrl+L",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_copy_selected_in_data_view",
+   "label": "Copy Selected In Data View",
+   "keys": "Ctrl+C",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_cut_selected_in_data_view",
+   "label": "Cut Selected In Data View",
+   "keys": "Ctrl+X",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_down_in_data_view",
+   "label": "Move Selected Down In Data View",
+   "keys": "S",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_down_x10_in_data_view",
+   "label": "Move Selected Down x10 In Data View",
+   "keys": "Shift+S",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_left_in_data_view",
+   "label": "Move Selected Left In Data View",
+   "keys": "A",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_left_x10_in_data_view",
+   "label": "Move Selected Left x10 In Data View",
+   "keys": "Shift+A",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_right_in_data_view",
+   "label": "Move Selected Right In Data View",
+   "keys": "D",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_right_x10_in_data_view",
+   "label": "Move Selected Right x10 In Data View",
+   "keys": "Shift+D",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_up_in_data_view",
+   "label": "Move Selected Up In Data View",
+   "keys": "W",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_move_selected_up_x10_in_data_view",
+   "label": "Move Selected Up x10 In Data View",
+   "keys": "Shift+W",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_paste_in_data_view",
+   "label": "Paste In Data View",
+   "keys": "Ctrl+V",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_rename_suboperator_in_data_view",
+   "label": "Rename Suboperator In Data View",
+   "keys": "F2",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_select_all_in_data_view",
+   "label": "Select All In Data View",
+   "keys": "Ctrl+A",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "particle_flow_select_none_in_data_view",
+   "label": "Select None In Data View",
+   "keys": "Ctrl+D",
+   "context": "particle_flow",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "activeshade_draw_region",
+   "label": "Draw Region",
+   "keys": "D",
+   "context": "activeshade",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "activeshade_initialize",
+   "label": "Initialize",
+   "keys": "P",
+   "context": "activeshade",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "activeshade_render",
+   "label": "Render",
+   "keys": "F9",
+   "context": "activeshade",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "activeshade_select_object",
+   "label": "Select Object",
+   "keys": "Q",
+   "context": "activeshade",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "activeshade_update",
+   "label": "Update",
+   "keys": "U",
+   "context": "activeshade",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "crowd_solve",
+   "label": "Solve",
+   "keys": "S, F9",
+   "context": "crowd",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ffd_switch_to_control_point_level",
+   "label": "Switch To Control Point Level",
+   "keys": "Alt+Shift+C",
+   "context": "ffd",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ffd_switch_to_lattice_level",
+   "label": "Switch To Lattice Level",
+   "keys": "Alt+Shift+L",
+   "context": "ffd",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ffd_switch_to_set_volume_level",
+   "label": "Switch To Set Volume Level",
+   "keys": "Alt+Shift+S",
+   "context": "ffd",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "ffd_switch_to_top_level",
+   "label": "Switch To Top Level",
+   "keys": "Alt+Shift+T",
+   "context": "ffd",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_cv_constrained_normal_move",
+   "label": "CV Constrained Normal Move",
+   "keys": "Alt+N",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_cv_constrained_u_move",
+   "label": "CV Constrained U Move",
+   "keys": "Alt+U",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_cv_constrained_v_move",
+   "label": "CV Constrained V Move",
+   "keys": "Alt+V",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_display_curves",
+   "label": "Display Curves",
+   "keys": "Shift+Ctrl+C",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_display_shaded_lattice",
+   "label": "Display Shaded Lattice",
+   "keys": "Alt+L",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_lock_2d_selection",
+   "label": "Lock 2D Selection",
+   "keys": "Ctrl+L",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_select_next_in_u",
+   "label": "Select Next in U",
+   "keys": "Ctrl+Right",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_select_next_in_v",
+   "label": "Select Next in V",
+   "keys": "Ctrl+Up",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_select_previous_in_u",
+   "label": "Select Previous in U",
+   "keys": "Ctrl+Left",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_select_previous_in_v",
+   "label": "Select Previous in V",
+   "keys": "Ctrl+Down",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_select_sub_object_by_name",
+   "label": "Select Sub-Object By Name",
+   "keys": "H",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_set_tessellation_preset_1",
+   "label": "Set Tessellation Preset 1",
+   "keys": "Alt+1",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_set_tessellation_preset_2",
+   "label": "Set Tessellation Preset 2",
+   "keys": "Alt+2",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_set_tessellation_preset_3",
+   "label": "Set Tessellation Preset 3",
+   "keys": "Alt+3",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_soft_selection",
+   "label": "Soft Selection",
+   "keys": "Shift+B",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_curve_cv_level",
+   "label": "Switch To Curve CV Level",
+   "keys": "Alt+Shift+Z",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_curve_level",
+   "label": "Switch To Curve Level",
+   "keys": "Alt+Shift+C",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_imports_level",
+   "label": "Switch To Imports Level",
+   "keys": "Alt+Shift+I",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_point_level",
+   "label": "Switch To Point Level",
+   "keys": "Alt+Shift+P",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_surface_cv_level",
+   "label": "Switch To Surface CV Level",
+   "keys": "Alt+Shift+V",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_surface_level",
+   "label": "Switch To Surface Level",
+   "keys": "Alt+Shift+S",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "nurbs_switch_to_top_level",
+   "label": "Switch To Top Level",
+   "keys": "Alt+Shift+T",
+   "context": "nurbs",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "physique_copy_envelope",
+   "label": "Copy Envelope",
+   "keys": "Ctrl+C",
+   "context": "physique",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "physique_delete",
+   "label": "Delete",
+   "keys": "Del",
+   "context": "physique",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "physique_next",
+   "label": "Next",
+   "keys": "PgDown",
+   "context": "physique",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "physique_paste_envelope",
+   "label": "Paste Envelope",
+   "keys": "Ctrl+V",
+   "context": "physique",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "physique_previous",
+   "label": "Previous",
+   "keys": "PgUp",
+   "context": "physique",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "physique_reset_envelopes",
+   "label": "Reset Envelopes",
+   "keys": "Ctrl+E",
+   "context": "physique",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "reaction_manager_set_max_influence",
+   "label": "Set Max Influence",
+   "keys": "Ctrl+I",
+   "context": "reaction_manager",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "reaction_manager_set_min_influence",
+   "label": "Set Min Influence",
+   "keys": "Alt+I",
+   "context": "reaction_manager",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "video_post_execute_sequence",
+   "label": "Execute Sequence",
+   "keys": "F9",
+   "context": "video_post",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "video_post_new_sequence",
+   "label": "New Sequence",
+   "keys": "Ctrl+Shift+N",
+   "context": "video_post",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "video_post_pan",
+   "label": "Pan",
+   "keys": "Ctrl+P",
+   "context": "video_post",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "video_post_zoom_extents",
+   "label": "Zoom Extents",
+   "keys": "Ctrl+Alt+Z",
+   "context": "video_post",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "video_post_zoom_region",
+   "label": "Zoom Region",
+   "keys": "Ctrl+W",
+   "context": "video_post",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "weighttable_copy",
+   "label": "Copy",
+   "keys": "Ctrl+C",
+   "context": "weighttable",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "weighttable_paste",
+   "label": "Paste",
+   "keys": "Ctrl+V",
+   "context": "weighttable",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "weighttable_select_all",
+   "label": "Select All",
+   "keys": "Ctrl+A",
+   "context": "weighttable",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "weighttable_select_invert",
+   "label": "Select Invert",
+   "keys": "Ctrl+I",
+   "context": "weighttable",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "weighttable_select_none",
+   "label": "Select None",
+   "keys": "Ctrl+D",
+   "context": "weighttable",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  },
+  {
+   "action": "paintweight_toggle_paint_mode",
+   "label": "Toggle Paint mode",
+   "keys": "B",
+   "context": "paintweight",
+   "mouse": null,
+   "source": "https://help.autodesk.com/cloudhelp/2026/ENU/3DSMax-Basics/files/GUID-A73E1B09-7BFE-4A22-8153-1D3D2237B8E9.htm",
+   "verified": true
+  }
+ ]
+}

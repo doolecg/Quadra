@@ -1,0 +1,11 @@
+[package]
+name = "quadra_app"
+description = "Quadra: the app entry point."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "quadra"
+path = "src/main.rs"

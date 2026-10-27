@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quadra mockup A: Max layout</title>
+<style>
+:root{--ui:#444444;--strip:#2f2f2f;--rib:#414141;--ribt:#383838;--row1:#4f4f4f;--row2:#5a5a5a;--ro:#515151;--btn:#656565;--fld:#595959;--fld2:#646464;--trk:#2a2a2a;--ink:#dcdcdc;--dim:#8c8c8c;--on:#5f8ac1;--vp:#353535;--act:#a58c3c}
+*{box-sizing:border-box}
+html{background:#444444}
+body{margin:0;zoom:.85;width:2259px;height:1271px;background:var(--ui);color:var(--ink);font:13px/1.25 "Segoe UI",Tahoma,sans-serif;display:grid;grid-template-rows:27px 39px 150px 1fr 24px 33px 66px;overflow:hidden;user-select:none}
+.ic{width:26px;height:26px;display:block}
+.menu{display:flex;align-items:center;padding:0 6px}
+.menu>span{padding:2px 9px}
+.menu .r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.dd{display:inline-flex;align-items:center;justify-content:space-between;background:var(--fld2);height:22px;padding:0 6px;gap:10px;font-size:12px}
+.dd::after{content:"";border:4px solid transparent;border-top:5px solid #ddd;margin-top:5px}
+.dd.nodrop::after{display:none}
+.tb{display:flex;align-items:center;padding:0 4px;gap:2px}
+.tb .b{width:36px;height:34px}
+.b{width:34px;height:34px;display:grid;place-items:center;position:relative;flex:none}
+.b.on{background:var(--on);outline:1px solid #8fb2e0;outline-offset:-1px}
+.b.fly::after{content:"";position:absolute;right:2px;bottom:2px;border:3px solid transparent;border-right-color:#ddd;border-bottom-color:#ddd}
+.sep{width:1px;height:26px;background:#5a5a5a;margin:0 4px;flex:none}
+.rib{display:grid;grid-template-rows:27px 1fr;padding:0 0 0 15px}
+.rtabs{display:flex;align-items:flex-end;gap:2px;padding-left:12px}
+.rtabs span{padding:3px 26px;color:#a8a8a8}
+.rtabs .on{background:#5a5a5a;color:var(--ink);border:1px solid #6a6a6a;border-bottom:0}
+.rtabs .mini{padding:3px 12px;display:flex;align-items:center;gap:4px}
+.rpan{display:flex;gap:2px;background:var(--ui);padding-bottom:4px}
+.pn{background:var(--rib);display:grid;grid-template-rows:1fr 22px}
+.pn .t{background:var(--ribt);text-align:center;line-height:22px;color:var(--ink)}
+.pn .t.dd2::after{content:" ▾";font-size:10px}
+.pn .c{display:flex;align-items:flex-start;gap:10px;padding:0 14px;align-self:center}
+.lbl2{display:flex;flex-direction:column;gap:6px}
+.lbl2>span{height:22px;display:flex;align-items:center;gap:6px}
+.lbl2>.row48{height:48px}
+.spin{display:inline-flex;align-items:center;background:var(--fld2);padding:0 4px;height:20px;min-width:62px;justify-content:space-between;gap:4px}
+.spin::after{content:"▴▾";font-size:8px;line-height:7px;width:6px;word-break:break-all;color:#ccc}
+.big{display:flex;flex-direction:column;align-items:center;gap:2px;width:84px;text-align:center;line-height:1.15}
+.big.dis{color:#7a7a7a}
+.big .ic{width:40px;height:40px}
+.vsep{width:1px;align-self:stretch;background:#555;margin:0 4px}
+.main{display:grid;grid-template-columns:56px 360px 1fr 249px;min-height:0}
+.lay{background:var(--strip);position:relative}
+.lay .tab{position:absolute;left:12px;bottom:96px;width:30px;height:24px;background:#4a4a4a;display:grid;place-items:center}
+.lay .tab::after{content:"";border:5px solid transparent;border-left:7px solid #ddd;margin-left:6px}
+.lay .thumb{position:absolute;left:12px;bottom:52px;width:38px;height:38px;background:var(--on);padding:4px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.lay .thumb i{background:#3d5f8d;border:1px solid #9cb9df}
+.lay .thumb2{position:absolute;left:12px;bottom:8px;width:38px;height:38px;background:#585858}
+.exp{display:grid;grid-template-rows:30px 34px 1fr 36px;padding:0 10px 0 26px;min-height:0}
+.exp .m{display:flex;gap:18px;align-items:center;padding-left:36px}
+.srch{display:flex;align-items:center;gap:8px;padding-left:36px}
+.srch .f{width:150px;height:24px;background:var(--fld)}
+.exp>*{min-width:0}
+.tbl{display:grid;grid-template-columns:28px 1fr;min-height:0}
+.cats{display:flex;flex-direction:column;gap:3px}
+.cats span{width:24px;height:24px;display:grid;place-items:center}
+.cats .on{background:var(--on)}
+.cats .gap{height:6px}
+.list{background:var(--ui);margin-left:8px}
+.hd{display:grid;grid-template-columns:1fr 80px;background:#4a4a4a;height:24px;align-items:center}
+.hd span{padding-left:6px}
+.hd span:first-child{display:flex;justify-content:space-between;padding-right:6px}
+.r{display:grid;grid-template-columns:22px 26px 22px 1fr 80px;height:21px;align-items:center}
+.r .n,.r .fz{height:21px;display:flex;align-items:center;padding-left:4px}
+.r:nth-child(even) .n,.r:nth-child(even) .fz{background:var(--row1)}
+.r:nth-child(odd) .n,.r:nth-child(odd) .fz{background:var(--row2)}
+.r.sel .n,.r.sel .fz{background:var(--on)!important}
+.r .fz{justify-content:center;color:#7d7d7d;font-size:12px}
+.foot{display:flex;align-items:center;gap:6px;padding-left:36px}
+.foot .dd{width:226px;color:#e8d84a;background:var(--fld)}
+.vps{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;padding:4px 4px 2px;min-height:0}
+.view{position:relative;background:var(--vp);overflow:hidden}
+.view.p{background:linear-gradient(#262626,#4c4c4c)}
+.view.act::after{content:"";position:absolute;inset:0;border:2px solid var(--act);pointer-events:none}
+.view svg{position:absolute;inset:0}
+.vl{position:absolute;left:6px;top:4px;font-size:12px;color:#cdcdcd;word-spacing:1px}
+.view svg.cube{inset:auto;right:12px;top:10px;width:110px;height:96px}
+.cmd{display:flex;flex-direction:column;padding:6px 6px 0 6px;min-height:0}
+.ct{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+.ct span{height:36px;background:#3b3b3b;display:grid;place-items:center}
+.ct .on{background:#4f4f4f}
+.cc{display:flex;justify-content:space-between;padding:6px 0}
+.cc span{width:32px;height:32px;display:grid;place-items:center}
+.cc .on{background:var(--on)}
+.cmd>.dd{height:26px;margin:2px 0 8px;font-size:13px;background:var(--fld2)}
+.ro{background:var(--ro);margin:0 0 8px;border-radius:2px}
+.roh{display:flex;align-items:center;gap:8px;padding:6px 8px;font-weight:700}
+.roh::before{content:"";border:4px solid transparent;border-top:6px solid #ccc;margin-top:4px}
+.roh i{margin-left:auto;width:10px;height:10px;background:#5f5f5f}
+.rob{padding:2px 14px 14px}
+.ck{display:flex;align-items:center;gap:6px;color:#7d7d7d;justify-content:center;margin-bottom:8px}
+.ck b{width:13px;height:13px;background:#4a4a4a;border:1px solid #5d5d5d}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px}
+.g2 span{background:var(--btn);height:21px;display:grid;place-items:center;border-radius:2px}
+.nc{display:flex;gap:6px}
+.nc span{flex:1;height:28px;background:var(--fld);display:flex;align-items:center;padding-left:6px}
+.nc i{width:28px;height:28px;background:#cd8c54;outline:1px solid #2a2a2a}
+.ts{display:flex;align-items:center;gap:3px;padding:0 46px 0 10px;position:relative}
+.ts .a{width:22px;height:20px;background:#525252;display:grid;place-items:center;color:#bbb;font-size:12px}
+.ts .thw{position:absolute;left:calc(10px + 24%);display:flex;gap:3px}
+.ts .th{width:135px;height:20px;background:var(--fld2);display:grid;place-items:center}
+.ts .rest{flex:1;height:20px}
+.tk{display:grid;grid-template-columns:10px 68px 1fr 53px}
+.tk .cv{grid-column:2;display:grid;place-items:center}
+.tk .bar{background:var(--trk);position:relative;overflow:hidden}
+.tk .tl{position:absolute;left:0;right:0;top:0;height:13px}
+.tk .n{position:absolute;bottom:2px;font-size:12px;transform:translateX(-50%);color:#cfcfcf}
+.tk .cur{position:absolute;top:0;bottom:0;width:9px;background:#8a7d2a;opacity:.9}
+.tk .k{position:absolute;top:3px;width:6px;height:11px}
+.st{display:flex;align-items:stretch;padding:4px 0 4px 6px}
+.mx{width:122px;display:grid;grid-template-rows:1fr 1fr;gap:2px}
+.mx div{background:#dcc4c4}
+.mx div+div{background:#fff;color:#9a9a9a;font:13px Consolas,monospace;padding:2px 6px}
+.msg{width:600px;display:grid;grid-template-rows:1fr 1fr;padding-left:12px}
+.msg span{display:flex;align-items:center}
+.abs{position:absolute;display:flex;align-items:center}
+</style>
+</head>
+<body>
+<div class="menu">
+  <span>File</span><span>Edit</span><span>Tools</span><span>Group</span><span>Views</span><span>Create</span><span>Modifiers</span><span>Animation</span><span>Graph Editors</span><span>Rendering</span><span>Civil View</span><span>Customize</span><span>Scripting</span><span>Content</span><span>Help</span>
+  <span class="r"><span class="dd" style="width:116px" id="sign"></span><span style="color:#cfcfcf">Workspaces:</span><span class="dd" style="width:170px">Default</span></span>
+</div>
+<div class="tb" id="tb"></div>
+<div class="rib">
+  <div class="rtabs"><span>Modeling</span><span>Freeform</span><span>Selection</span><span>Object Paint</span><span class="on">Populate</span><span class="mini" id="ribmini"></span></div>
+  <div class="rpan">
+    <div class="pn" style="width:266px"><div class="c"><div class="lbl2"><span>Create Flow:</span><span class="row48" id="f1"></span></div><div class="lbl2"><span>Width: <span class="spin">275.591</span></span><span class="row48" id="f2" style="gap:4px"></span></div></div><div class="t">Define Flows</div></div>
+    <div class="pn" style="width:444px"><div class="c"><div class="lbl2"><span>Create Idle Area:</span><span class="row48" id="f3"></span></div><div id="f4" style="display:flex;flex-direction:column;gap:6px;padding-top:4px"></div><div class="vsep"></div><div class="lbl2"><span class="big dis row48" style="flex-direction:row;width:auto;gap:6px;text-align:left;height:48px" id="f5"></span><span>Brush Size: <span class="spin" style="min-width:52px">24</span></span></div></div><div class="t dd2">Define Idle Areas</div></div>
+    <div class="pn" style="width:244px"><div class="c"><div class="lbl2"><span style="height:40px;line-height:1.2">Number<br>of Frames:</span><span><span class="spin" style="width:66px">300</span></span></div><div class="big dis" id="f6"></div><div id="f7" style="align-self:center"></div></div><div class="t">Simulate</div></div>
+    <div class="pn" style="width:170px"><div class="c" id="f8"></div><div class="t dd2">Display</div></div>
+    <div class="pn" style="width:639px"><div class="c" id="f9" style="justify-content:space-around"></div><div class="t">Edit Selected</div></div>
+  </div>
+</div>
+<div class="main">
+  <div class="lay"><div class="tab"></div><div class="thumb"><i></i><i></i><i></i><i></i></div><div class="thumb2"></div></div>
+  <div class="exp">
+    <div class="m"><span>Select</span><span>Display</span><span>Edit</span><span>Customize</span></div>
+    <div class="srch"><span class="f"></span><span id="sx" style="display:flex;align-items:center;gap:8px;flex:1"></span></div>
+    <div class="tbl">
+      <div class="cats" id="cats"></div>
+      <div class="list">
+        <div class="hd"><span><span>Name (Sorted Ascending)</span><span style="font-size:9px">▲</span></span><span>Frozen</span></div>
+        <div id="rows"></div>
+      </div>
+    </div>
+    <div class="foot"><span class="dd">Default</span><span id="ft" style="display:flex;align-items:center;gap:6px;flex:1"></span></div>
+  </div>
+  <div class="vps">
+    <div class="view" data-vp="top"><span class="vl">[+] [Top ] [Standard ] [Wireframe ]</span><svg class="cube" data-cube="top"></svg></div>
+    <div class="view" data-vp="front"><span class="vl">[+] [Front ] [Standard ] [Wireframe ]</span><svg class="cube" data-cube="front"></svg></div>
+    <div class="view" data-vp="left" data-shade><span class="vl">[+] [Left ] [Standard ] [Default Shading ]</span><svg class="cube" data-cube="left"></svg></div>
+    <div class="view p act" data-vp="persp" data-shade><span class="vl">[+] [Perspective ] [Standard ] [Default Shading ]</span><svg class="cube" data-cube="persp"></svg></div>
+  </div>
+  <div class="cmd">
+    <div class="ct" id="ct"></div>
+    <div class="cc" id="cc"></div>
+    <span class="dd">Standard Primitives</span>
+    <div class="ro"><div class="roh">Object Type<i></i></div>
+      <div class="rob"><div class="ck"><b></b>AutoGrid</div>
+        <div class="g2"><span>Box</span><span>Cone</span><span>Sphere</span><span>GeoSphere</span><span>Cylinder</span><span>Tube</span><span>Torus</span><span>Pyramid</span><span>Teapot</span><span>Plane</span><span>TextPlus</span></div>
+      </div>
+    </div>
+    <div class="ro"><div class="roh">Name and Color<i></i></div>
+      <div class="rob"><div class="nc"><span>Box001</span><i></i></div></div>
+    </div>
+  </div>
+</div>
+<div class="ts"><span class="rest"></span><span class="thw"><span class="a">&lt;</span><span class="th">24 / 100</span><span class="a">&gt;</span></span></div>
+<div class="tk"><span></span><span class="cv" id="cv"></span><div class="bar" id="bar"><svg class="tl" id="ticks" preserveAspectRatio="none"></svg></div><span></span></div>
+<div class="st">
+  <div class="mx"><div></div><div>MAXScript Mi</div></div>
+  <div class="msg"><span>1 Object Selected</span><span>Click and drag to select and move objects</span></div>
+  <div style="position:absolute;right:0;bottom:0;width:1140px;height:66px">
+  <div class="abs" style="left:47px;bottom:36px;gap:0" id="st1"></div>
+  <div class="abs" style="left:142px;bottom:38px"><span>X:</span><span class="dd nodrop" style="position:absolute;left:14px;width:72px;background:#575757">-28.0</span><span style="position:absolute;left:104px">Y:</span><span class="dd nodrop" style="position:absolute;left:119px;width:70px;background:#575757">4.0</span><span style="position:absolute;left:207px">Z:</span><span class="dd nodrop" style="position:absolute;left:222px;width:70px;background:#575757">0.0</span><span style="position:absolute;left:309px;white-space:nowrap">Grid = 10.0</span></div>
+  <div class="abs" style="left:415px;bottom:6px;gap:8px" id="st2"></div>
+  <div style="position:absolute;left:580px;bottom:4px;display:grid;grid-template-rows:28px 28px;gap:4px" id="pb"></div>
+  <div class="abs" style="left:740px;bottom:4px;gap:6px" id="keys"></div>
+  <div style="position:absolute;left:1020px;bottom:4px;display:grid;grid-template-columns:repeat(4,28px);grid-template-rows:28px 28px;gap:2px 2px" id="nav"></div>
+  </div>
+</div>
+<script>
+// Fit the whole 2259x1271 layout into the window so the bottom bars are never cut off.
+const fit=()=>document.body.style.zoom=Math.min(innerWidth/2259,innerHeight/1271);
+fit();addEventListener('resize',fit);
+</script>
+<script src="vp.js"></script>
+<script>
+// Our own icon set, drawn to sit at Max's visual weight: light grey shapes with teal and amber accents.
+const W='#e2e2e2',T='#3fc1c1',Y='#f0b23a',B='#4f86d8',G='#9a9a9a';
+const I={
+undo:`<path d="M9 7L4 12l5 5" stroke="${W}" stroke-width="3" fill="none"/><path d="M4 12h11a5 5 0 010 10h-3" stroke="${W}" stroke-width="3" fill="none"/>`,
+redo:`<g transform="matrix(-1 0 0 1 26 0)"><path d="M9 7L4 12l5 5" stroke="${W}" stroke-width="3" fill="none"/><path d="M4 12h11a5 5 0 010 10h-3" stroke="${W}" stroke-width="3" fill="none"/></g>`,
+link:`<path d="M11 15l4-4M9 13l-3 3a3 3 0 004 4l3-3M17 13l3-3a3 3 0 00-4-4l-3 3" stroke="${W}" stroke-width="2.6" fill="none" stroke-linecap="round"/>`,
+unlink:`<path d="M9 13l-3 3a3 3 0 004 4l3-3M17 13l3-3a3 3 0 00-4-4l-3 3" stroke="${W}" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M5 5l16 16" stroke="${W}" stroke-width="2"/>`,
+bind:`<path d="M3 16c3-3 5 3 8 0s5 3 8 0M3 20c3-3 5 3 8 0s5 3 8 0" stroke="${W}" stroke-width="2" fill="none"/><circle cx="18" cy="8" r="3.5" stroke="${Y}" stroke-width="2" fill="none"/><path d="M15.5 10.5L11 15" stroke="${Y}" stroke-width="2"/>`,
+selobj:`<rect x="3" y="4" width="13" height="15" fill="${W}"/><path d="M13 10l9 5-4 1 2 5-2 1-2-5-3 3z" fill="${Y}" stroke="#333" stroke-width=".8"/>`,
+selname:`<path d="M3 5h15M3 9h15M3 13h11M3 17h9" stroke="${W}" stroke-width="2.4"/><path d="M14 12l8 5-3.5 1 2 4.5-1.8.8-2-4.5-2.7 2.7z" fill="${Y}" stroke="#333" stroke-width=".8"/>`,
+rect:`<rect x="4" y="5" width="18" height="16" fill="none" stroke="${T}" stroke-width="2" stroke-dasharray="3 2"/>`,
+win:`<rect x="3" y="4" width="16" height="15" fill="none" stroke="${W}" stroke-width="2" stroke-dasharray="3 2"/><rect x="12" y="11" width="11" height="11" fill="${T}"/>`,
+move:`<path d="M13 2v22M2 13h22" stroke="${W}" stroke-width="2.4"/><path d="M13 1l-4 5h8zM13 25l-4-5h8zM1 13l5-4v8zM25 13l-5-4v8z" fill="${W}"/>`,
+rot:`<path d="M20 13a7 7 0 11-3-5.7" stroke="${W}" stroke-width="3" fill="none"/><path d="M14 3l7 2-2 7z" fill="${W}"/>`,
+scale:`<rect x="3" y="12" width="11" height="11" fill="${W}"/><rect x="9" y="4" width="13" height="13" fill="none" stroke="${T}" stroke-width="2" stroke-dasharray="3 2"/>`,
+place:`<circle cx="11" cy="15" r="7.5" fill="${W}"/><path d="M15 11l6-6" stroke="${T}" stroke-width="3"/><circle cx="20" cy="6" r="3" fill="${T}"/>`,
+pivot:`<path d="M5 3v20M5 5l12 3-12 3" fill="${W}" stroke="${W}" stroke-width="1.5"/><path d="M15 16l4-4 4 4M19 12v10" stroke="${T}" stroke-width="2" fill="none"/>`,
+manip:`<path d="M13 3v20M3 13h20" stroke="${W}" stroke-width="2.4"/><circle cx="13" cy="3.5" r="2.5" fill="${T}"/><circle cx="13" cy="13" r="2" fill="${W}"/>`,
+kbd:`<rect x="4" y="4" width="18" height="18" rx="2" fill="${W}"/><path d="M13 8l5 6h-3v4h-4v-4H8z" fill="#3a3a3a"/>`,
+snap:`<text x="2" y="21" font-size="20" font-weight="700" fill="${W}" font-family="Segoe UI">3</text><path d="M14 9a4 4 0 118 0c0 3-4 3-4 6M18 19v1" stroke="${Y}" stroke-width="2.2" fill="none"/>`,
+ang:`<path d="M4 22h18M4 22L17 6" stroke="${W}" stroke-width="2.6" fill="none"/><path d="M10 22a7 7 0 00-2-5" stroke="${W}" stroke-width="2" fill="none"/><path d="M14 8a4 4 0 118 0c0 3-4 3-4 6" stroke="${Y}" stroke-width="2.2" fill="none"/>`,
+pct:`<path d="M5 22L21 4" stroke="${W}" stroke-width="2.6"/><circle cx="7" cy="7" r="3.2" stroke="${W}" stroke-width="2.4" fill="none"/><circle cx="19" cy="19" r="3.2" stroke="${W}" stroke-width="2.4" fill="none"/>`,
+spin:`<path d="M9 3l-6 7h12zM9 23l-6-7h12z" fill="${W}"/><path d="M16 9a4 4 0 118 0c0 3-4 3-4 6" stroke="${Y}" stroke-width="2.2" fill="none"/>`,
+nsel:`<path d="M8 3c-3 0-3 2-3 5s-2 5-2 5 2 0 2 5 0 5 3 5M18 3c3 0 3 2 3 5s2 5 2 5-2 0-2 5 0 5-3 5" stroke="${W}" stroke-width="2.4" fill="none"/><path d="M15 6l-4 14" stroke="${Y}" stroke-width="2.4"/>`,
+mirror:`<path d="M13 2v22" stroke="${T}" stroke-width="2"/><path d="M10 5L3 20h7z" fill="${W}"/><path d="M16 5l7 15h-7z" fill="none" stroke="${W}" stroke-width="1.8"/>`,
+align:`<path d="M4 3v20" stroke="${W}" stroke-width="2.4"/><rect x="7" y="5" width="15" height="6" fill="${W}"/><rect x="7" y="14" width="9" height="6" fill="${T}"/>`,
+sexp:`<rect x="4" y="3" width="18" height="20" fill="none" stroke="${W}" stroke-width="2"/><path d="M7 8h12M7 12h12M7 16h12M7 20h12" stroke="${W}" stroke-width="1.8"/>`,
+lexp:`<path d="M3 9l10-5 10 5-10 5z" fill="${W}"/><path d="M3 13l10 5 10-5M3 17l10 5 10-5" stroke="${W}" stroke-width="2" fill="none"/>`,
+ribbon:`<rect x="3" y="4" width="20" height="18" fill="none" stroke="${W}" stroke-width="2"/><rect x="5" y="6" width="7" height="6" fill="${W}"/><rect x="14" y="6" width="7" height="6" fill="${W}"/><path d="M5 16h16M5 19h16" stroke="${W}" stroke-width="1.6"/>`,
+curve:`<rect x="3" y="3" width="20" height="20" fill="none" stroke="${W}" stroke-width="2"/><path d="M5 18c4 0 4-10 8-10s4 8 8 8" stroke="${T}" stroke-width="2.4" fill="none"/>`,
+sch:`<path d="M3 18h20" stroke="${T}" stroke-width="3"/><path d="M13 3v11M8 9l5 5 5-5" stroke="${T}" stroke-width="2.6" fill="none"/><rect x="3" y="20" width="20" height="3" fill="${W}"/>`,
+mtl:`<circle cx="7" cy="7" r="3" fill="${W}"/><circle cx="19" cy="7" r="3" fill="none" stroke="${W}" stroke-width="1.6"/><circle cx="7" cy="19" r="3" fill="none" stroke="${W}" stroke-width="1.6"/><circle cx="19" cy="19" r="3" fill="${W}"/><path d="M10 7h6M7 10v6M19 10v6M10 19h6" stroke="${T}" stroke-width="1.6"/>`,
+rset:`<path d="M4 18c0-6 4-9 9-9s8 3 8 9z" fill="${W}"/><path d="M9 9V6h8v3" stroke="${W}" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="4.5" fill="${Y}"/><circle cx="20" cy="19" r="1.6" fill="#444"/>`,
+rfw:`<rect x="2" y="3" width="22" height="20" fill="${T}"/><rect x="4" y="7" width="18" height="14" fill="#2b6f6f"/><path d="M6 19c0-5 3-7 7-7s7 2 7 7z" fill="${W}"/><path d="M2 5h22" stroke="${W}" stroke-width="1.5"/>`,
+render:`<path d="M3 19c0-6 4-9 9-9s9 3 9 9z" fill="${W}"/><path d="M8 10V7h8v3" stroke="${W}" stroke-width="2" fill="none"/><path d="M19 10l4-6M21 13l4-2" stroke="${T}" stroke-width="2"/><path d="M3 21h18" stroke="${W}" stroke-width="2"/>`,
+sign:`<circle cx="13" cy="9" r="4" fill="none" stroke="${W}" stroke-width="2"/><path d="M5 22c0-5 4-7 8-7s8 2 8 7" fill="none" stroke="${W}" stroke-width="2"/>`,
+cpCreate:`<path d="M13 3v20M3 13h20" stroke="${W}" stroke-width="3.2"/>`,
+cpModify:`<rect x="3" y="4" width="20" height="18" fill="none" stroke="${T}" stroke-width="2"/><path d="M4 21C9 19 17 11 22 5" stroke="${W}" stroke-width="2.6" fill="none"/><circle cx="3.5" cy="4" r="2" fill="${T}"/><circle cx="22.5" cy="22" r="2" fill="${T}"/>`,
+cpHier:`<rect x="8" y="3" width="10" height="5" fill="${W}"/><path d="M13 8v4M5 12h16M5 12v4M21 12v4" stroke="${W}" stroke-width="2" fill="none"/><rect x="2" y="16" width="7" height="6" fill="${T}"/><rect x="17" y="16" width="7" height="6" fill="${T}"/>`,
+cpMotion:`<circle cx="15" cy="13" r="8" fill="${W}"/><path d="M8 7a8 8 0 000 12M4 9a6 6 0 000 8" stroke="${T}" stroke-width="2" fill="none"/>`,
+cpDisp:`<rect x="3" y="4" width="20" height="13" fill="${W}"/><path d="M9 22h8M13 17v5" stroke="${W}" stroke-width="2.4"/>`,
+cpUtil:`<path d="M5 21l9-9" stroke="${W}" stroke-width="3.4" stroke-linecap="round"/><path d="M14 12a5 5 0 006-7l-3 3-3-1-1-3 3-3a5 5 0 00-7 6z" fill="${W}"/>`,
+geo:`<circle cx="13" cy="13" r="9" fill="${W}"/>`,
+shp:`<rect x="3" y="3" width="13" height="13" rx="3" fill="none" stroke="${W}" stroke-width="2"/><rect x="9" y="9" width="13" height="13" rx="3" fill="${W}"/><path d="M12 13h7" stroke="#444" stroke-width="2"/>`,
+lgt:`<circle cx="13" cy="10" r="6.5" fill="${W}"/><path d="M10 17h6v3h-6zM11 21h4v2h-4z" fill="${W}"/>`,
+cam:`<rect x="2" y="7" width="15" height="13" rx="1" fill="${W}"/><path d="M18 11l6-3v11l-6-3z" fill="${W}"/>`,
+hlp:`<path d="M4 22V5l17 17z" fill="none" stroke="${W}" stroke-width="2.4"/><path d="M9 17v-4l4 4z" fill="${W}"/>`,
+spw:`<path d="M3 8c3-3 5 3 8 0s5-3 8 0 3 0 3 0M3 14c3-3 5 3 8 0s5-3 8 0M3 20c3-3 5 3 8 0s5-3 8 0" stroke="${W}" stroke-width="2" fill="none"/>`,
+sys:`<circle cx="8" cy="8" r="4" fill="none" stroke="${W}" stroke-width="2.2"/><circle cx="18" cy="18" r="4" fill="none" stroke="${W}" stroke-width="2.2"/><path d="M11 11l4 4" stroke="${W}" stroke-width="2.2"/>`,
+x:`<path d="M6 6l14 14M20 6L6 20" stroke="${W}" stroke-width="2.2"/>`,
+filt:`<path d="M3 4h20l-8 9v8l-4 2V13z" fill="${W}"/><path d="M14 17l3 3 6-7" stroke="${T}" stroke-width="2.4" fill="none"/>`,
+lock:`<rect x="6" y="12" width="14" height="11" fill="${W}"/><path d="M9 12V8a4 4 0 018 0v4" stroke="${W}" stroke-width="2.4" fill="none"/>`,
+eye:`<path d="M2 13c3-5 7-7 11-7s8 2 11 7c-3 5-7 7-11 7S5 18 2 13z" fill="none" stroke="${W}" stroke-width="2"/><circle cx="13" cy="13" r="3.5" fill="${W}"/>`,
+snow:`<path d="M13 3v20M4 8l18 10M4 18L22 8" stroke="${W}" stroke-width="1.8"/>`,
+layers:`<path d="M3 9l10-5 10 5-10 5z" fill="${W}"/><path d="M3 13l10 5 10-5M3 17l10 5 10-5" stroke="${W}" stroke-width="2" fill="none"/>`,
+hier:`<rect x="8" y="3" width="10" height="6" fill="${W}"/><path d="M13 9v4M5 13h16M5 13v3M21 13v3" stroke="${W}" stroke-width="2" fill="none"/><rect x="2" y="16" width="7" height="6" fill="${W}"/><rect x="17" y="16" width="7" height="6" fill="${W}"/>`,
+doc:`<path d="M5 3h12l4 4v16H5z" fill="${W}"/><path d="M8 10h10M8 14h10M8 18h6" stroke="#444" stroke-width="1.6"/>`,
+sq:`<rect x="5" y="4" width="16" height="18" fill="${W}"/>`,
+docb:`<rect x="5" y="4" width="16" height="18" fill="none" stroke="${W}" stroke-width="2"/><path d="M8 10h10M8 14h10M8 18h6" stroke="${W}" stroke-width="1.6"/>`,
+fadd:`<path d="M3 4h20l-8 9v8l-4 2V13z" fill="${G}"/><circle cx="20" cy="19" r="4" fill="none" stroke="${W}" stroke-width="2"/>`,
+f2:`<path d="M3 4h20l-8 9v8l-4 2V13z" fill="${W}"/>`,
+cont:`<path d="M3 9h20v14H3zM7 9V4h12v5" fill="none" stroke="${W}" stroke-width="2"/>`,
+bone:`<path d="M6 20L20 6" stroke="${W}" stroke-width="3"/><circle cx="5" cy="21" r="3" fill="${W}"/><circle cx="21" cy="5" r="3" fill="${W}"/>`,
+person:`<circle cx="13" cy="6" r="3" fill="#e8d6b0"/><path d="M9 11h8l-1 8h-2v6h-2v-6h-2z" fill="${W}"/>`,
+personG:`<circle cx="13" cy="5" r="3" fill="#e8d6b0"/><path d="M9 10h8l-1 9h-6z" fill="#2fa64a"/><path d="M10 19h6v6h-2.4v-4h-1.2v4H10z" fill="#2f55c8"/>`,
+flow:`<path d="M2 24l10-8h12l-8 8z" fill="#bdbdbd"/><circle cx="9" cy="6" r="2.5" fill="#e8d6b0"/><path d="M6 10h6v7H6z" fill="#3aa04a"/><circle cx="17" cy="6" r="2.5" fill="#e8d6b0"/><path d="M14 10h6v7h-6z" fill="${W}"/><path d="M21 2l1.5 3 3 .5-2.2 2 .5 3-2.8-1.5-2.8 1.5.5-3-2.2-2 3-.5z" fill="${Y}"/>`,
+ramp:`<path d="M2 20l8-8h14l-8 8z" fill="none" stroke="${G}" stroke-width="2"/>`,
+idle:`<ellipse cx="13" cy="22" rx="10" ry="3.5" fill="none" stroke="#9ab" stroke-width="1.6"/><circle cx="13" cy="5" r="2.6" fill="#e8d6b0"/><path d="M10 9h6l-1 7h-1v5h-2v-5h-1z" fill="${W}"/><path d="M21 2l1.5 3 3 .5-2.2 2 .5 3-2.8-1.5-2.8 1.5.5-3-2.2-2 3-.5z" fill="${Y}"/>`,
+cloud:`<path d="M5 17a4 4 0 010-8 6 6 0 0111-1 4 4 0 013 9z" fill="none" stroke="${G}" stroke-width="2"/><path d="M19 17v6M16 20h6" stroke="${G}" stroke-width="2"/>`,
+ghost:`<circle cx="13" cy="6" r="3" fill="none" stroke="${G}" stroke-width="1.5"/><path d="M9 11h8l-1 8h-2v6h-2v-6h-2z" fill="none" stroke="${G}" stroke-width="1.5"/>`,
+ghostx:`<circle cx="11" cy="6" r="3" fill="none" stroke="${G}" stroke-width="1.5"/><path d="M7 11h8l-1 8h-2v6h-2v-6H9z" fill="none" stroke="${G}" stroke-width="1.5"/><path d="M18 18l6 6M24 18l-6 6" stroke="${G}" stroke-width="2"/>`,
+crowd:`<g fill="none" stroke="${G}" stroke-width="1.4"><circle cx="8" cy="7" r="2.5"/><path d="M5 11h6v7H5z"/><circle cx="17" cy="9" r="2.5"/><path d="M14 13h6v7h-6z"/></g><path d="M3 4h4M3 4v3M23 4h-4M23 4v3" stroke="${G}" stroke-width="1.4"/>`,
+crv:`<path d="M3 5h4M3 9h4M3 13h4M3 17h4" stroke="${W}" stroke-width="1.6"/><path d="M9 16c3 0 3-9 6-9s3 9 6 9" stroke="${T}" stroke-width="2" fill="none"/>`,
+iso:`<rect x="5" y="5" width="16" height="16" fill="none" stroke="${G}" stroke-width="1.8"/><path d="M3 3h5M3 3v5M23 3h-5M23 3v5M3 23h5M3 23v-5M23 23h-5M23 23v-5" stroke="${G}" stroke-width="1.8"/>`,
+lock2:`<rect x="7" y="12" width="12" height="10" fill="none" stroke="${G}" stroke-width="2"/><path d="M9.5 12V8.5a3.5 3.5 0 017 0V12" stroke="${G}" stroke-width="2" fill="none"/>`,
+abs:`<rect x="4" y="4" width="18" height="18" fill="none" stroke="${W}" stroke-width="2"/><path d="M13 7v12M7 13h12" stroke="${W}" stroke-width="2"/><rect x="9" y="9" width="8" height="8" fill="none" stroke="${W}" stroke-width="1.6"/>`,
+tag:`<rect x="1" y="1" width="24" height="24" fill="${B}"/><path d="M6 9l7-4 7 4v8l-7 4-7-4zM6 9l7 4 7-4M13 13v8" stroke="${W}" stroke-width="1.5" fill="none"/>`,
+p0:`<path d="M4 5v16" stroke="${W}" stroke-width="2.6"/><path d="M14 13l7-7v14zM7 13l7-7v14z" fill="${W}"/>`,
+p1:`<path d="M4 13l8-7v14z" fill="${W}"/><path d="M15 6v14M20 6v14" stroke="${W}" stroke-width="2.6"/>`,
+p2:`<path d="M7 4l14 9-14 9z" fill="${W}"/>`,
+p3:`<path d="M6 6v14M11 6v14" stroke="${W}" stroke-width="2.6"/><path d="M22 13l-8-7v14z" fill="${W}"/>`,
+p4:`<path d="M22 5v16" stroke="${W}" stroke-width="2.6"/><path d="M12 13L5 6v14zM19 13l-7-7v14z" fill="${W}"/>`,
+mode:`<path d="M3 13l6-5v10zM23 13l-6-5v10z" fill="${W}"/>`,
+tcfg:`<circle cx="11" cy="11" r="8" fill="${W}"/><path d="M11 6v5h4" stroke="#444" stroke-width="2" fill="none"/><circle cx="19" cy="19" r="4.5" fill="${Y}"/><circle cx="19" cy="19" r="1.5" fill="#444"/>`,
+bigkey:`<path d="M18 4v28M4 18h28" stroke="${W}" stroke-width="5"/><circle cx="30" cy="29" r="4.5" fill="none" stroke="${T}" stroke-width="2.6"/><path d="M27 32l-5 5M24 35l2 2" stroke="${T}" stroke-width="2.6"/>`,
+keyf:`<path d="M4 23c2-12 4-17 9-17s7 5 9 17" stroke="${W}" stroke-width="2" fill="none"/><rect x="11" y="3" width="4" height="4" fill="${T}"/><circle cx="4" cy="23" r="2" fill="${T}"/><circle cx="22" cy="23" r="2" fill="${T}"/>`,
+zm:`<circle cx="11" cy="11" r="7" fill="none" stroke="${W}" stroke-width="2.6"/><path d="M16 16l7 7" stroke="${W}" stroke-width="3"/>`,
+zma:`<circle cx="9" cy="13" r="6" fill="none" stroke="${W}" stroke-width="2.4"/><path d="M13 17l6 6" stroke="${W}" stroke-width="2.6"/><rect x="15" y="2" width="4" height="4" fill="${T}"/><rect x="20" y="2" width="4" height="4" fill="${T}"/><rect x="20" y="7" width="4" height="4" fill="${T}"/>`,
+ze:`<path d="M13 4l9 5v9l-9 5-9-5V9z" fill="${T}"/><path d="M4 9l9 5 9-5M13 14v9" stroke="#2a7a7a" stroke-width="1.5" fill="none"/>`,
+zea:`<path d="M15 3l8 4.5v8L15 20l-8-4.5v-8z" fill="${T}"/><path d="M8 11l-6 3.5v6l6 3.5 6-3.5" stroke="${W}" stroke-width="1.8" fill="none"/>`,
+fov:`<path d="M3 13L22 4v18z" fill="none" stroke="${W}" stroke-width="2.4"/>`,
+pan:`<path d="M8 23c-3-3-5-7-5-9 0-1.5 2-2 3-.5l2 3V5a1.5 1.5 0 013 0v7V3.5a1.5 1.5 0 013 0V12V4.5a1.5 1.5 0 013 0V13V7a1.5 1.5 0 013 0v9c0 4-3 7-7 7z" fill="${W}"/>`,
+orbit:`<ellipse cx="13" cy="14" rx="11" ry="5" fill="none" stroke="${W}" stroke-width="2" transform="rotate(-20 13 14)"/><circle cx="13" cy="13" r="5.5" fill="${T}"/>`,
+maxv:`<rect x="3" y="3" width="20" height="20" fill="${W}"/><path d="M3 23L23 3v20z" fill="#2c2c2c"/><path d="M14 12l7-7M16 5h5v5" stroke="#2c2c2c" stroke-width="2" fill="none"/>`
+};
+const sv=(n,sz=26,vb=26)=>`<svg class="ic" style="width:${sz}px;height:${sz}px" viewBox="0 0 ${vb} ${vb}">${I[n]}</svg>`;
+const put=(id,html)=>document.getElementById(id).innerHTML=html;
+const dd=(l,w)=>`<span class="dd" style="width:${w}px;margin:0 4px">${l}</span>`;
+const tb=[['undo'],['redo'],'|',['link'],['unlink'],['bind'],'|',dd('All',88),['selobj'],['selname'],['rect','fly'],['win'],'|',['move','on'],['rot'],['scale','fly'],['place','fly'],dd('View',88),['pivot','fly'],['manip'],['kbd','on'],'|',['snap','fly'],['ang','on'],['pct'],['spin'],'|',['nsel'],dd('Create Selection Set',160),['mirror'],['align','fly'],'|',['sexp'],['lexp'],'|',['ribbon','on'],['curve'],['sch'],['mtl','fly'],['rset'],['rfw'],['render','fly'],'|',dd('C:\\Project1',190)];
+put('tb',tb.map(x=>x==='|'?'<span class="sep"></span>':typeof x==='string'?x:`<span class="b ${x[1]||''}">${sv(x[0])}</span>`).join('')+'<span style="color:#bbb;margin-left:2px">»</span>');
+put('sign',`<span style="display:flex;align-items:center;gap:4px">${sv('sign',16)}Sign In</span>`);
+put('ribmini',`<svg width="18" height="12"><rect x="1" y="1" width="16" height="10" rx="2" fill="#ddd"/><rect x="5" y="4" width="8" height="4" fill="#444"/></svg>▾`);
+put('f1',sv('flow',44));
+put('f2',sv('ramp',30)+sv('ramp',30)+sv('ramp',30));
+put('f3',['idle','idle','idle','idle'].map(n=>sv(n,40)).join(''));
+put('f4',sv('cloud',30)+sv('cloud',30));
+put('f5',sv('ghost',34)+'<span>Modify<br>Idle Areas</span>');
+put('f6',sv('crowd',40)+'Simulate');
+put('f7',sv('ghostx',30));
+put('f8',`<div style="display:flex;gap:8px;align-items:center">${sv('personG',44)}<span style="font-size:10px">▾</span>${sv('ghost',34)}</div>`);
+put('f9',[['Regenerate','ghost'],['Swap<br>Appearance','crowd'],['Switch<br>Resolution','crowd'],['Resimulate','crowd'],['Delete','ghostx'],['Bake<br>Selected','personG']].map(([l,n],i)=>`<div class="big ${i<5?'dis':''}">${sv(n,40)}${l}</div>`).join(''));
+put('sx',`${sv('x',22)}<span class="b on" style="width:30px;height:30px">${sv('filt',22)}</span>${sv('lock',22)}<span style="color:#7f86c7;margin-left:auto">»</span>`);
+const onCats=['geo','shp','lgt','cam','hlp','spw','cont','bone','person','snow','eye'];
+put('cats',[...onCats,'|','doc','sq','docb','|','fadd','f2','cont'].map((n,i)=>n==='|'?'<span class="gap"></span>':`<span class="${i<onCats.length?'on':''}">${sv(n,18)}</span>`).join(''));
+const objs=[['Box001','geo',1],['Camera001','cam'],['Camera001.Target','cam'],['Cylinder001','geo'],['Sphere001','geo'],['Sun001','lgt']];
+put('rows',objs.map(([n,t,s])=>`<div class="r ${s?'sel':''}"><span></span><span>${sv('eye',18)}</span><span>${sv(t,16)}</span><span class="n">${n}</span><span class="fz">✻</span></div>`).join(''));
+put('ft',sv('layers',22)+`<span class="b on" style="width:30px;height:30px">${sv('hier',22)}</span><span style="color:#7f86c7;margin-left:auto">»</span>`);
+put('ct',[['cpCreate','on'],['cpModify'],['cpHier'],['cpMotion'],['cpDisp'],['cpUtil']].map(([n,c])=>`<span class="${c||''}">${sv(n,28)}</span>`).join(''));
+put('cc',['geo','shp','lgt','cam','hlp','spw','sys'].map((n,i)=>`<span class="${i?'':'on'}">${sv(n,22)}</span>`).join(''));
+put('cv',sv('crv',26));
+put('st1',sv('iso',24)+'<span style="width:17px"></span>'+sv('lock2',22)+'<span style="width:4px"></span>'+sv('abs',20));
+put('st2',sv('tag',24)+'Add Time Tag');
+put('pb',`<div style="display:flex;gap:6px;align-items:center">${['p0','p1','p2','p3','p4'].map(n=>sv(n,24)).join('')}</div><div style="display:flex;gap:4px;align-items:center">${sv('mode',20)}<span class="spin" style="width:92px">24</span>${sv('tcfg',22)}</div>`);
+put('keys',`<span style="width:52px;height:58px;background:#646464;display:grid;place-items:center">${sv('bigkey',38,40)}</span><div style="display:grid;grid-template-columns:60px 142px;grid-template-rows:27px 27px;gap:4px;align-items:center"><span class="dd nodrop" style="justify-content:center;background:#5e5e5e">Auto</span><span class="dd">Selected</span><span class="dd nodrop" style="justify-content:center;background:#5e5e5e">Set K.</span><span style="display:flex;gap:6px;align-items:center">${sv('keyf',24)}<span class="dd nodrop" style="flex:1;justify-content:center;background:#5e5e5e">Filters...</span></span></div>`);
+put('nav',['zm','zma','ze','zea','fov','pan','orbit','maxv'].map(n=>`<span class="b" style="width:28px;height:28px">${sv(n,22)}</span>`).join(''));
+const bar=document.getElementById('bar'),wpx=bar.clientWidth,F=100,fx=f=>f/F*(wpx-28)+14;
+let tk='';for(let f=0;f<=F;f++){const x=fx(f).toFixed(1);tk+=`<line x1="${x}" y1="0" x2="${x}" y2="${f%5?7:10}" stroke="#7a7a7a"/>`;}
+const tl=document.getElementById('ticks');tl.innerHTML=tk;tl.setAttribute('viewBox',`0 0 ${wpx} 13`);
+for(let f=0;f<=F;f+=5)bar.insertAdjacentHTML('beforeend',`<span class="n" style="left:${fx(f)}px">${f}</span>`);
+bar.insertAdjacentHTML('beforeend',`<span class="cur" style="left:${fx(24)-4}px"></span>`);
+[[0,'#d23c3c'],[24,'#d23c3c'],[61,'#3cb43c'],[100,'#d23c3c']].forEach(([f,c])=>bar.insertAdjacentHTML('beforeend',`<span class="k" style="left:${fx(f)-3}px;background:${c}"></span>`));
+document.querySelectorAll('[data-cube]').forEach(s=>{
+  const n=s.dataset.cube;s.setAttribute('viewBox','0 0 110 96');
+  if(n==='top'){s.innerHTML=`<circle cx="62" cy="44" r="27" fill="none" stroke="#8a8a8a" stroke-width="7" opacity=".85"/><rect x="50" y="32" width="24" height="24" fill="#9d9d9d" stroke="#6a6a6a"/><text x="62" y="47" font-size="6" fill="#d6d6d6" text-anchor="middle">TOP</text>${[['N',62,12],['S',62,80],['E',94,47],['W',30,47]].map(([t,x,y])=>`<text x="${x}" y="${y}" font-size="9" font-weight="700" fill="#cfcfcf" text-anchor="middle">${t}</text>`).join('')}`;return;}
+  const ring=`<ellipse cx="62" cy="58" rx="32" ry="9" fill="none" stroke="#8a8a8a" stroke-width="4" opacity=".85"/><ellipse cx="62" cy="58" rx="27" ry="6" fill="none" stroke="#5a5a5a" stroke-width="1"/>`;
+  if(n==='persp'){s.innerHTML=ring+`<path d="M48 30l14-7 14 7v15l-14 7-14-7z" fill="#8d8d8d"/><path d="M48 30l14-7 14 7-14 7z" fill="#a9a9a9"/><path d="M62 37v15l14-7V30z" fill="#7a7a7a"/><text x="62" y="32" font-size="5" fill="#ddd" text-anchor="middle">TOP</text><text x="54" y="45" font-size="4.5" fill="#ddd" text-anchor="middle">FRONT</text><text x="70" y="45" font-size="4.5" fill="#ddd" text-anchor="middle">RIGHT</text>`;return;}
+  s.innerHTML=ring+`<rect x="50" y="28" width="24" height="22" fill="#9d9d9d" stroke="#6a6a6a"/><text x="62" y="41" font-size="5.5" fill="#dedede" text-anchor="middle">${n.toUpperCase()}</text>`;
+});
+drawViewports({grid:'#424242',gridMajor:'#1c1c1c',sel:'#f2dc3a',halo:'#f2dc3a',wire:['#e09b56','#5aa8d8','#8cc46e'],shade:[[205,140,84],[110,165,205],[150,195,118]],tripod:true});
+</script>
+</body>
+</html>

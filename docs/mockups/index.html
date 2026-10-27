@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quadra main window mockups</title>
+<link rel="stylesheet" href="../research/style.css">
+<style>
+main{max-width:1280px}
+img{width:100%;display:block;border-radius:6px;margin:12px 0}
+textarea{width:100%;min-height:70px;font:inherit;padding:8px;border:0;border-radius:6px;background:var(--surface)}
+button{font:inherit;padding:8px 16px;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<h1>Quadra main window: three directions</h1>
+<div class="first">
+  <strong>Read this first</strong>
+  <ol>
+    <li>All three show the same scene and the same task: the box selected, frame 24.</li>
+    <li>They are static pictures for picking a direction. Nothing here is built yet.</li>
+    <li>B and C use our own names (Stack, Pivot, Poly Edit, Workbench Bar), per the legal checklist in <a href="../research/architecture.html">architecture.html</a>.</li>
+    <li>Every panel is a dock in all three, so the choice is about the default layout and the look, not a lock-in.</li>
+    <li>Click a picture to open the live mockup. Write notes under each, then press Copy my notes and paste them back to me.</li>
+  </ol>
+</div>
+
+<h2>A. Max layout</h2>
+<p>A near copy of the 3ds Max 2026 default screen at 1920x1080: menus, main toolbar, ribbon tabs, Scene Explorer on the left, 2x2 views with bracket labels and view cubes, command panel with the Editable Poly stack and rollouts, time slider, track bar, status line, key and playback controls, navigation buttons. Icons are our own drawings. It uses Max's own names (Editable Poly, Scene Explorer), which the legal checklist says to rename before any release.</p>
+<a href="a-familiar.html"><img src="a-familiar.png" alt="Mockup A: four viewports, toolbar row and tabbed command panel"></a>
+<textarea data-n="A" placeholder="Notes on A"></textarea>
+
+<h2>B. Focus</h2>
+<p>One big view by default (the 2x2 grid is one click away, top right), scene tree on the left, properties and stack on the right. Command search (X) sits in the title bar and the quad menu is shown open. Amber accent. The most modern; hides more on first launch.</p>
+<a href="b-focus.html"><img src="b-focus.png" alt="Mockup B: single large viewport with scene tree, properties and an open quad menu"></a>
+<textarea data-n="B" placeholder="Notes on B"></textarea>
+
+<h2>C. Workbench</h2>
+<p>Workspace tabs (Modelling, Shading, Animation and so on) each with their own Workbench Bar of grouped tools. One large view plus three small ortho views, and a curve strip instead of a plain time slider. Blue accent. Best for tool discovery; the busiest top area.</p>
+<a href="c-workbench.html"><img src="c-workbench.png" alt="Mockup C: tool ribbon, one large and three small viewports, curve strip"></a>
+<textarea data-n="C" placeholder="Notes on C"></textarea>
+
+<h2>Pick</h2>
+<textarea data-n="Overall" placeholder="Which one, or which parts to mix"></textarea>
+<p><button onclick="copyNotes(this)">Copy my notes</button></p>
+</main>
+<script>
+function copyNotes(b){
+  const t='Mockup notes:\n'+[...document.querySelectorAll('textarea')].filter(x=>x.value.trim()).map(x=>x.dataset.n+': '+x.value.trim()).join('\n');
+  navigator.clipboard.writeText(t).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy my notes',1500)});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quadra mockup B: Focus</title>
+<style>
+:root{--ground:#17181a;--panel:#212226;--raised:#2c2e33;--ink:#e2e2e0;--muted:#8b8e94;--accent:#e3a33b;--vp:#2f3136}
+*{box-sizing:border-box}
+body{margin:0;width:1600px;height:960px;background:var(--ground);color:var(--ink);font:13px/1.4 "Segoe UI",system-ui,sans-serif;display:grid;grid-template-rows:40px 1fr 64px;overflow:hidden}
+.top{display:grid;grid-template-columns:260px 1fr 260px;align-items:center;padding:0 12px;background:var(--panel)}
+.top .file{color:var(--muted)}
+.top .file b{color:var(--ink);font-weight:600;margin-right:8px}
+.search{justify-self:center;width:520px;background:var(--ground);border-radius:6px;padding:6px 12px;color:var(--muted);display:flex}
+.search kbd{margin-left:auto;font:inherit;background:var(--raised);padding:0 7px;border-radius:3px;color:var(--ink)}
+.modes{justify-self:end;display:flex;gap:2px;background:var(--ground);border-radius:6px;padding:2px}
+.modes span{padding:4px 10px;border-radius:4px;color:var(--muted)}
+.modes .on{background:var(--raised);color:var(--ink)}
+.main{display:grid;grid-template-columns:250px 1fr 320px;min-height:0;gap:6px;padding:6px}
+.pane{background:var(--panel);border-radius:6px;min-height:0;overflow:hidden}
+.ph{padding:10px 12px;font-weight:600;display:flex;justify-content:space-between}
+.ph span{font-weight:400;color:var(--muted)}
+.filter{margin:0 10px 8px;background:var(--ground);border-radius:4px;padding:5px 9px;color:var(--muted)}
+.tree div{padding:4px 12px;display:flex;gap:8px;color:var(--ink)}
+.tree .d1{padding-left:28px}.tree .d2{padding-left:44px}
+.tree .muted{color:var(--muted)}
+.tree .sel{background:#3b3220;color:var(--accent)}
+.tree i{font-style:normal;color:var(--muted);width:12px}
+.view{position:relative;background:var(--vp);border-radius:6px;overflow:hidden}
+.view svg{position:absolute;inset:0}
+.vbar{position:absolute;left:12px;top:12px;display:flex;gap:6px}
+.chip{background:rgba(23,24,26,.82);padding:4px 10px;border-radius:4px;color:var(--ink)}
+.chip b{font-weight:400;color:var(--muted)}
+.dock{position:absolute;left:12px;top:56px;display:flex;flex-direction:column;gap:2px;background:rgba(23,24,26,.82);padding:4px;border-radius:6px}
+.dock span{width:34px;height:34px;display:grid;place-items:center;border-radius:4px;color:var(--muted);font-size:15px}
+.dock .on{background:var(--accent);color:#231a08}
+.layout{position:absolute;right:12px;top:12px;display:grid;grid-template-columns:repeat(2,14px);gap:2px;background:rgba(23,24,26,.82);padding:6px;border-radius:4px}
+.layout i{height:10px;background:var(--muted);border-radius:1px}
+.layout i:first-child{background:var(--accent)}
+.quad{position:absolute;left:590px;top:430px;display:grid;grid-template-columns:170px 170px;gap:3px}
+.quad div{background:rgba(23,24,26,.94);border-radius:6px;padding:6px 0}
+.quad span{display:block;padding:4px 12px}
+.quad span.h{color:var(--muted);font-size:11px;padding-bottom:6px}
+.quad span.hi{background:var(--raised)}
+.quad span em{float:right;font-style:normal;color:var(--muted)}
+.props .ph{padding-bottom:4px}
+.objname{margin:4px 12px 10px;font-size:18px;font-weight:600}
+.objname span{display:block;font-size:12px;font-weight:400;color:var(--muted)}
+.stack{margin:0 12px;background:var(--ground);border-radius:6px;padding:4px}
+.stack div{padding:6px 8px;border-radius:4px;display:flex;justify-content:space-between}
+.stack .cur{background:var(--raised)}
+.stack .cur b{color:var(--accent);font-weight:400}
+.stack .base{color:var(--muted)}
+.add{margin:8px 12px 14px;padding:6px;text-align:center;border-radius:4px;background:var(--raised);color:var(--muted)}
+.grp{padding:8px 12px 4px;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 130px;align-items:center;padding:4px 12px}
+.row span:first-child{color:var(--muted)}
+.num{background:var(--ground);padding:4px 8px;border-radius:4px;text-align:right}
+.bar{position:relative;height:6px;margin:6px 12px 10px;background:var(--ground);border-radius:3px}
+.bar i{position:absolute;inset:0 62% 0 0;background:var(--accent);border-radius:3px}
+.time{display:grid;grid-template-columns:260px 1fr 200px;align-items:center;gap:12px;padding:0 12px;background:var(--panel);margin:0 6px 6px;border-radius:6px}
+.play{display:flex;gap:4px;align-items:center}
+.play span{width:30px;height:28px;display:grid;place-items:center;border-radius:4px;background:var(--raised)}
+.play .on{background:var(--accent);color:#231a08}
+.play .rec{width:auto;padding:0 10px;background:#5c2626;color:#f3d9d9}
+.tl{position:relative;height:36px}
+.tl .ruler{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.tl .lane{position:absolute;left:0;right:0;bottom:4px;height:14px;background:var(--ground);border-radius:3px}
+.tl .lane i{position:absolute;top:3px;width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
+.tl .head{position:absolute;top:14px;bottom:0;left:24%;width:2px;background:var(--accent)}
+.stat{justify-self:end;color:var(--muted);text-align:right;font-size:12px}
+</style>
+</head>
+<body>
+<div class="top">
+  <span class="file"><b>Quadra</b>warehouse_scene.usd</span>
+  <span class="search">Search commands, objects and settings<kbd>X</kbd></span>
+  <span class="modes"><span class="on">Model</span><span>Shade</span><span>Animate</span><span>Render</span></span>
+</div>
+<div class="main">
+  <div class="pane">
+    <div class="ph">Scene <span>14 objects</span></div>
+    <div class="filter">Filter</div>
+    <div class="tree">
+      <div><i>▾</i>Warehouse</div>
+      <div class="d1"><i>▾</i>Props</div>
+      <div class="d2 sel"><i>■</i>Crate_01</div>
+      <div class="d2"><i>●</i>Barrel_01</div>
+      <div class="d2"><i>●</i>Buoy_01</div>
+      <div class="d2 muted"><i>■</i>Crate_02 (hidden)</div>
+      <div class="d1"><i>▸</i>Shell</div>
+      <div class="d1"><i>▸</i>Floor</div>
+      <div><i>▾</i>Lights</div>
+      <div class="d1"><i>✦</i>Sun</div>
+      <div class="d1"><i>✦</i>Fill_area</div>
+      <div><i>▾</i>Cameras</div>
+      <div class="d1"><i>▣</i>Cam_hero</div>
+      <div class="d1"><i>▣</i>Cam_wide</div>
+    </div>
+  </div>
+  <div class="view" data-vp="persp">
+    <div class="vbar"><span class="chip">Perspective</span><span class="chip">Shaded <b>+ edges</b></span><span class="chip">Snap <b>off</b></span></div>
+    <div class="dock"><span class="on">↖</span><span>✥</span><span>⟳</span><span>⤢</span><span>⊞</span><span>✂</span></div>
+    <div class="layout"><i></i><i></i><i></i><i></i></div>
+    <div class="quad">
+      <div><span class="h">Display</span><span>Isolate selection<em>Alt+Q</em></span><span>Hide selection</span><span>Unhide all</span><span>Freeze selection</span></div>
+      <div><span class="h">Tools</span><span>Extrude</span><span class="hi">Inset</span><span>Bevel</span><span>Bridge</span></div>
+      <div><span class="h">Transform</span><span>Move</span><span>Rotate</span><span>Scale</span><span>Properties…</span></div>
+      <div><span class="h">Convert</span><span>To Poly Edit</span><span>To mesh</span><span>Collapse stack</span><span>Add to group</span></div>
+    </div>
+  </div>
+  <div class="pane props">
+    <div class="ph">Properties <span>Stack</span></div>
+    <div class="objname">Crate_01<span>Box · Props</span></div>
+    <div class="stack"><div>Bend <span>◉</span></div><div class="cur"><b>Poly Edit · Polygon</b><span>◉</span></div><div class="base">Box <span>base</span></div></div>
+    <div class="add">+ Add modifier</div>
+    <div class="grp">Inset</div>
+    <div class="row"><span>Amount</span><span class="num">1.5 cm</span></div>
+    <div class="bar"><i></i></div>
+    <div class="row"><span>Mode</span><span class="num">By polygon ▾</span></div>
+    <div class="row"><span>Selected</span><span class="num">6 polygons</span></div>
+    <div class="grp">Box</div>
+    <div class="row"><span>Length</span><span class="num">40.0 cm</span></div>
+    <div class="row"><span>Width</span><span class="num">40.0 cm</span></div>
+    <div class="row"><span>Height</span><span class="num">30.0 cm</span></div>
+    <div class="row"><span>Segments</span><span class="num">1 · 1 · 1</span></div>
+  </div>
+</div>
+<div class="time">
+  <div class="play"><span class="rec">● Auto key</span><span>⏮</span><span class="on">▶</span><span>⏭</span><span style="width:auto;padding:0 10px">24</span></div>
+  <div class="tl">
+    <div class="ruler"><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div>
+    <div class="lane"><i style="left:0"></i><i style="left:24%"></i><i style="left:61%"></i><i style="left:calc(100% - 10px)"></i></div>
+    <div class="head"></div>
+  </div>
+  <div class="stat">60 fps · 1.2M tris<br>Grid 10 cm · World</div>
+</div>
+<script src="vp.js"></script>
+<script>drawViewports({grid:'#3e4046',gridMajor:'#1b1c1f',sel:'#e3a33b',wire:['#c9a170','#7fb0cc','#a4c487'],shade:[[196,160,118],[128,160,186],[150,180,125]],axis:['#d65c5c','#6cbf6c','#5c8fd6']});</script>
+</body>
+</html>

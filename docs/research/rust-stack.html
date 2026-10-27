@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadra: Rust stack per layer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Rust stack for Quadra, one pick per layer</h1>
+<p>Researched 2026-10-27. Crate versions and dates come from the crates.io API and GitHub; links are given per claim. Anything I could not confirm is marked <span class="unv">UNVERIFIED</span>. "Pros/cons" that are not sourced are my judgement.</p>
+
+<div class="first">
+<h2>Read this first</h2>
+<ol>
+<li>UI: <strong>egui 0.37 with egui_dock</strong>. Rerun, a dense shipping viewer, is built on egui. Weak spots: IME and the 0.x API churn.</li>
+<li>Viewport: <strong>wgpu 30</strong>, dropping to raw Vulkan only if a measured limit forces it. No public benchmark of 10M to 50M triangles on wgpu was found (<span class="unv">UNVERIFIED</span>); the closest numbers are in the evidence block in section 2, so a prototype is still the first task.</li>
+<li>Scene and modifiers: <strong>custom dependency graph</strong> with lazy evaluation on rayon and a cache per modifier. Not an ECS.</li>
+<li>Undo: <strong>persistent (shared-structure) scene state</strong> with <code>Arc</code> mesh buffers. Undo is a pointer swap. Autosave serialises an immutable snapshot on another thread.</li>
+<li>Geometry: <strong>own half-edge edit mesh</strong>, <strong>manifold</strong> for booleans, <strong>OpenSubdiv</strong> for subdivision. All three are C++ except our own mesh, and we already carry C++ for Cycles.</li>
+<li>Scripting: <strong>embedded Python via PyO3</strong>. Plugin API: <strong>versioned C ABI</strong>, with Wasm as an optional sandbox later.</li>
+<li>Files: <strong>USD native</strong> through the pure-Rust <code>openusd</code> crate (0.8.0), <strong>ufbx</strong> for FBX, tobj, gltf. Alembic has no good Rust option.</li>
+<li>Biggest risks: egui IME, wgpu at 50M+ triangles, openusd being young (v0.8), and many C++ build dependencies.</li>
+</ol>
+</div>
+
+<h2>1. UI toolkit</h2>
+<table>
+<thead><tr><th>Option</th><th>Version and licence</th><th>Docking</th><th>Text, IME, accessibility</th><th>Proof and risk</th></tr></thead>
+<tbody>
+<tr><td><strong>egui + egui_dock</strong></td><td>egui 0.37.0 (2026-10-15), Apache-2.0 per GitHub; egui_dock 0.21.1, MIT (<a href="https://crates.io/crates/egui">crates.io</a>, <a href="https://crates.io/crates/egui_dock">egui_dock</a>)</td><td>egui_dock: open and close tabs, move between nodes, resize, drag tabs out to new windows, change layout from code (<a href="https://github.com/Adanos020/egui_dock">README</a>). Rerun also maintains <code>egui_tiles</code> (<a href="https://github.com/rerun-io/egui_tiles">repo</a>).</td><td>Accessibility via AccessKit (<a href="https://github.com/emilk/egui">egui README</a>). IME has open bugs, for example <a href="https://github.com/emilk/egui/issues/3532">#3532 "IME input broken"</a> and <a href="https://github.com/emilk/egui/issues/4486">#4486</a>. HiDPI: egui reads the monitor scale as <code>native_pixels_per_point</code> and multiplies it by a user <code>zoom_factor</code> (<a href="https://docs.rs/egui/latest/egui/struct.Context.html">egui Context docs</a>). I did not test it on a real HiDPI screen.</td><td>Rerun's viewer (Apache-2.0, 11.6k stars) depends on eframe and egui 0.37.0 (<a href="https://github.com/rerun-io/rerun/blob/main/Cargo.toml">Cargo.toml</a>). Docs say immediate mode is "easier to use, but less powerful" (<a href="https://github.com/emilk/egui">README</a>). Risk: 0.x breaking changes each release.</td></tr>
+<tr><td>Slint</td><td>1.18.1 (2026-09-21). Triple licence: GPL-3.0, Royalty-free 2.0 (proprietary desktop, mobile and web, free, not embedded) or commercial (<a href="https://github.com/slint-ui/slint/blob/master/LICENSE.md">LICENSE.md</a>, <a href="https://slint.dev/pricing">pricing</a>)</td><td>Release 1.18 notes do not mention docking or multi-window (<a href="https://slint.dev/blog/slint-1.18-released">blog</a>). Docking would be custom.</td><td>1.18: screen readers can read text inputs and selection; large text editing faster. IME not mentioned in the notes, and open Slint issues show gaps: <a href="https://github.com/slint-ui/slint/issues/10861">#10861</a> (last character dropped when focus is lost during composition) and <a href="https://github.com/slint-ui/slint/issues/3811">#3811</a> (input method support in the public Platform API).</td><td>Licence terms can change and tie us to one vendor's rules. Embedded use costs royalties from US$1 a device (<a href="https://slint.dev/pricing">pricing</a>); not our case.</td></tr>
+<tr><td>iced</td><td>0.14.0 (2025-12-07), MIT</td><td>Has a built-in pane grid widget (<a href="https://github.com/iced-rs/iced/blob/master/widget/src/pane_grid.rs">pane_grid.rs</a>). No tabbed docking crate checked.</td><td>Accessibility requests are open: <a href="https://github.com/iced-rs/iced/issues/552">#552</a>, PR <a href="https://github.com/iced-rs/iced/pull/1849">#1849</a> still open.</td><td>Used for COSMIC desktop apps via libcosmic (<a href="https://github.com/pop-os/libcosmic">libcosmic</a>). Last release is 10 months old.</td></tr>
+<tr><td>Qt 6 via cxx-qt</td><td>cxx-qt 0.10.0 (2026-08-24), MIT or Apache-2.0. Qt is LGPL-3 (also GPL and commercial) (<a href="https://doc.qt.io/qt-6/lgpl.html">Qt LGPL page</a>)</td><td>Qt has built-in dock windows: users can move, float and tab them (<a href="https://doc.qt.io/qt-6/qdockwidget.html">QDockWidget</a>). This corrects the earlier claim that Qt has no tabbed docking.</td><td>Qt has a text-input-method class for IME composition (<a href="https://doc.qt.io/qt-6/qinputmethod.html">QInputMethod</a>). I did not test its quality or its accessibility support.</td><td>LGPL: give notice and licence copy, and let users relink or use a shared library (<a href="https://doc.qt.io/qt-6/lgpl.html">Qt LGPL page</a>). Heaviest build and a second main loop. Not "light".</td></tr>
+<tr><td>Custom on wgpu</td><td>Our own</td><td>Write ourselves</td><td>Write text shaping, IME, accessibility ourselves</td><td>Highest cost. Not justified.</td></tr>
+</tbody>
+</table>
+<p><strong>Pick: egui + egui_dock.</strong> Why: pure Rust, permissive licences, proven in a dense shipping 3D viewer, and docking exists today. Risks: IME bugs (budget fixes or contribute upstream), version churn (pin and upgrade on a schedule). Fallback if IME is a hard requirement: Qt via cxx-qt.</p>
+
+<h2>2. Viewport renderer</h2>
+<table>
+<thead><tr><th>Option</th><th>Version and licence</th><th>Facts</th><th>Risk</th></tr></thead>
+<tbody>
+<tr><td><strong>wgpu</strong></td><td>30.0.1 (2026-08-22), Apache-2.0 (<a href="https://crates.io/crates/wgpu">crates.io</a>)</td><td>Native-only <code>MULTI_DRAW_INDIRECT_COUNT</code> feature on DX12 and Vulkan 1.2+; it also means multi-draw calls are not emulated (<a href="https://github.com/gfx-rs/wgpu/blob/trunk/wgpu-types/src/features.rs">features.rs</a>). Mesh shaders: <code>EXPERIMENTAL_MESH_SHADER</code>; changelog says fully supported on Vulkan, and on Metal and DX12 with passthrough shaders (<a href="https://github.com/gfx-rs/wgpu/blob/trunk/CHANGELOG.md">CHANGELOG</a>). Bevy's virtual geometry (meshlets) proof of concept is experimental and does not use GPU mesh shaders (<a href="https://bevy.org/news/bevy-0-14/">Bevy 0.14</a>).</td><td>No benchmark found for wgpu with 10M to 50M+ triangles at full detail (<span class="unv">UNVERIFIED</span>); see the evidence block below. The only wgpu-vs-Vulkan overhead note found is a 2021 forum guess of 10 to 100% CPU overhead, unmeasured (<a href="https://redlib.hbubli.cc/r/rust_gamedev/comments/p2ihhz/wgpu_vs_vulkan">thread</a>). Mesh shaders are still "experimental".</td></tr>
+<tr><td>ash (raw Vulkan)</td><td>0.38.0+1.3.281, last release 2024-04-01, Apache-2.0 (<a href="https://crates.io/crates/ash">crates.io</a>)</td><td>Full control: GPU-driven culling, meshlets, bindless, every extension.</td><td>Vulkan only (no Metal), unsafe, we write all sync and memory code. Last release is two and a half years old (repo still active, pushed 2026-10-26).</td></tr>
+<tr><td>vulkano</td><td>0.35.2 (2025-08-16)</td><td>Safe Vulkan wrapper (<a href="https://crates.io/crates/vulkano">crates.io</a>)</td><td>Vulkan only. No reason to prefer it.</td></tr>
+</tbody>
+</table>
+<h3>Performance evidence (second pass, 2026-10-27)</h3>
+<p>No public number exists for 10M to 50M triangles drawn through wgpu with a real GPU frame time. What I found:</p>
+<ul>
+<li><strong>Bevy meshlets (runs on wgpu):</strong> a scene of 3092 Stanford Bunnies at 144,042 triangles each (about 445 million source triangles, my multiplication) took about 2.78 ms of GPU time per frame on an RTX 3080 locked to base clock, at 2240x1260, averaged over 10 frames. Most of it was the first raster pass (1.85 ms). The renderer picks level of detail, so it does not draw all 445 million. The author says wgpu has no mesh shaders, so this uses indirect draws. Limits: experimental, opaque materials only, slow one-off mesh preparation, memory heavy (<a href="https://jms55.github.io/posts/2024-06-09-virtual-geometry-bevy-0-14/">jms55 write-up</a>, <a href="https://bevy.org/news/bevy-0-14/">Bevy 0.14</a>, <a href="https://dev-docs.bevyengine.org/bevy/pbr/experimental/meshlet/struct.MeshletPlugin.html">MeshletPlugin docs</a>). I found no published Bevy 0.15 or 0.16 numbers.</li>
+<li><strong>Plain Vulkan, GPU-driven (not wgpu):</strong> the vkguide demo drew a city of 125,000 objects, over 40 million triangles across two mesh passes (main view and shadow view), at 290 FPS on an RTX 2080; CPU work under 0.5 ms (<a href="https://vkguide.dev/docs/gpudriven/gpu_driven_engines/">vkguide</a>, marked outdated by its author).</li>
+<li><strong>wgpu CPU cost of multi-draw:</strong> one <code>multi_draw_indirect</code> call with 100,000 draws took about 2.7 to 3.5 ms of CPU time on an Apple M3 Pro. This is CPU recording and submit only (<a href="https://github.com/gfx-rs/wgpu/pull/10639">wgpu PR #10639</a>).</li>
+<li><strong>Rerun:</strong> its viewer is built on wgpu with its own <code>re_renderer</code> and egui (<a href="https://github.com/rerun-io/rerun/blob/main/ARCHITECTURE.md">ARCHITECTURE.md</a>). I found no published frame times for millions of points. rend3: no benchmark numbers found.</li>
+<li><strong>egui with dense UI:</strong> no measured numbers found. egui rebuilds the whole UI every frame, so dense lists must only build visible rows (<code>ScrollArea::show_rows</code>). A tree of thousands of nodes needs a flattened visible-rows list first. That is advice from docs and forum posts, not a measurement (<a href="https://docs.rs/egui/latest/egui/containers/struct.ScrollArea.html">ScrollArea docs</a>). Profile with the app's own scenes.</li>
+<li><strong>rayon:</strong> the <code>bvh</code> crate lists a BVH build for 120,000 triangles at 37.4 ms single-threaded and 8.9 ms with rayon (about 4.2 times faster); at 12,000 triangles about 2.7 times, at 1,200 about 1.9 times (<a href="https://docs.rs/crate/bvh">bvh 0.12.0 docs</a>, author's own benchmark). A general rayon case study got only about 2 times on 8 threads (4 cores) until the author changed the design (<a href="https://gendignoux.com/blog/2024/11/18/rust-rayon-optimized.html">Endignoux</a>). No rayon benchmark on mesh editing at million-triangle scale was found.</li>
+</ul>
+<p>Reading: Bevy's number shows wgpu can run GPU-driven cluster rendering of a very large source scene in a few milliseconds, but only with level of detail. It is not proof for 50M triangles drawn at full detail with edit-mode overlays. The prototype stays.</p>
+<h3>Techniques (design notes, not benchmarks)</h3>
+<p>For 50M+ triangles: instance repeated objects; run frustum and occlusion culling in a compute pass that writes indirect draw arguments; draw with multi-draw-indirect-count; split big meshes into meshlets with <code>meshopt</code> 0.7.0 (<a href="https://crates.io/crates/meshopt">crates.io</a>, binds <a href="https://github.com/zeux/meshoptimizer">meshoptimizer</a>, MIT). Selection highlight and picking: render an ID buffer and read back one pixel for picking, and run an edge filter on the ID or depth buffer for the outline. These are standard methods and I did not find a Rust reference implementation to cite.</p>
+<p><strong>Pick: wgpu.</strong> Why: one code path for Windows, Linux and Mac, feature coverage includes multi-draw-indirect-count and mesh shaders, and it is what egui and Rerun already use. Risk: wgpu overhead at extreme scale; mitigate with a one-week prototype (50M triangles, GPU culling) before locking in, and keep the renderer behind a trait so a Vulkan-only backend could replace it.</p>
+
+<h2>3. Scene graph and modifier stack</h2>
+<table>
+<thead><tr><th>Option</th><th>Facts</th><th>Fit</th></tr></thead>
+<tbody>
+<tr><td>bevy_ecs</td><td>0.20.0 (2026-10-08), Apache-2.0 (<a href="https://crates.io/crates/bevy_ecs">crates.io</a>). Good for flat components and parallel systems.</td><td>Modifier stacks and parent trees are graphs with caching, not flat component queries. Bevy's own version churn is fast.</td></tr>
+<tr><td>hecs</td><td>0.11.2 (2026-10-04) (<a href="https://crates.io/crates/hecs">crates.io</a>). Smaller ECS.</td><td>Same fit issue.</td></tr>
+<tr><td>salsa</td><td>0.28.5 (2026-09-24), Apache-2.0 (<a href="https://crates.io/crates/salsa">crates.io</a>). Incremental, query-based recomputation, built for compilers.</td><td>Right idea, but its API is shaped for compilers and still 0.x. Good to copy the design, not to depend on.</td></tr>
+<tr><td><strong>Custom DAG</strong></td><td>Each node holds inputs, a version counter, and a cached output behind <code>Arc</code>. Eval is pull-based: ask the final node, it checks input versions and recomputes only stale parts. <code>rayon</code> 1.12.0 runs independent branches in parallel (<a href="https://crates.io/crates/rayon">crates.io</a>, 625M downloads).</td><td>Matches how modifier stacks work. Our code, our rules.</td></tr>
+</tbody>
+</table>
+<p><strong>Pick: custom dependency graph with lazy rayon evaluation and a per-modifier cache</strong> (key: input versions plus parameter hash). Why: modifiers are a graph problem, and caching rules need to be ours. Risk: cycles and cache invalidation bugs; write property tests early. A small ECS could still hold flat per-object data later.</p>
+
+<h2>4. Undo and redo</h2>
+<table>
+<thead><tr><th>Option</th><th>Facts</th><th>Fit</th></tr></thead>
+<tbody>
+<tr><td>Command pattern</td><td><code>undo</code> crate 0.52.0 (2025-03-08) (<a href="https://crates.io/crates/undo">crates.io</a>). Every tool needs an exact inverse.</td><td>Small memory, but one bug in one inverse corrupts history.</td></tr>
+<tr><td>Snapshot diff</td><td>Compare full states.</td><td>Simple, slow and large for big meshes.</td></tr>
+<tr><td><strong>Persistent structures</strong></td><td><code>rpds</code> 1.2.1 (2026-05-15), MIT; <code>imbl</code> 7.0.2 (2026-09-09), the maintained successor of <code>im</code>, which is archived (<a href="https://crates.io/crates/rpds">rpds</a>, <a href="https://crates.io/crates/imbl">imbl</a>, <a href="https://github.com/bodil/im-rs">im-rs archived</a>)</td><td>An edit creates a new root that shares unchanged parts. Undo means going back to the old root. Mesh buffers inside <code>Arc</code> are copied only when edited.</td></tr>
+</tbody>
+</table>
+<p><strong>Pick: persistent scene state (imbl or rpds) with copy-on-write <code>Arc</code> mesh buffers.</strong> Unlimited steps cost only the changed parts. Autosave: the snapshot is immutable, so a worker thread can serialise it while the UI keeps editing, with no lock. Binary format option: <code>rkyv</code> 0.8.18 (<a href="https://crates.io/crates/rkyv">crates.io</a>), <span class="unv">UNVERIFIED</span> fit. Risk: memory growth for huge edits (a full-mesh edit keeps two copies); add an optional on-disk spill for old steps. Keep a command log only for labels ("Extrude"), not for reversal.</p>
+
+<h2>5. Geometry kernel</h2>
+<table>
+<thead><tr><th>Need</th><th>Option</th><th>Facts</th></tr></thead>
+<tbody>
+<tr><td>Edit mesh</td><td>mesh-graph 0.11.0</td><td>Halfedge triangle mesh, pure Rust, MIT, updated 2026-09-13 (<a href="https://crates.io/crates/mesh-graph">crates.io</a>, <a href="https://github.com/Synphonyte/mesh-graph">repo</a>). Triangles only; Max-style editable poly needs n-gons. Other crates are stale: hedge (2019), plexus (2019), alum 0.7.1 (2025-11) (<a href="https://crates.io/crates/alum">alum</a>).</td></tr>
+<tr><td>Booleans</td><td><strong>manifold3d</strong> (crate <code>manifold-csg</code> 0.4.1, 2026-09-09)</td><td>Safe Rust bindings to the manifold C++ library. Manifold: Apache-2.0, 2.4k stars, pushed 2026-10-27 (<a href="https://github.com/zmerlynn/manifold-csg">manifold-csg</a>, <a href="https://github.com/elalish/manifold">manifold</a>). The older <code>manifold-rs</code> is archived. <code>csgrs</code> (BSP trees, last release 2025-07) is pure Rust, but BSP booleans are less robust (<span class="unv">UNVERIFIED</span>; crate licence is MIT per crates.io).</td></tr>
+<tr><td>Subdivision</td><td><strong>opensubdiv-petite</strong> 0.3.1 (2026-05-14)</td><td>Safe Rust wrapper for Pixar OpenSubdiv, Apache-2.0 on crates.io; OpenSubdiv itself uses the Tomorrow Open Source licence (<a href="https://github.com/virtualritz/opensubdiv-petite">repo</a>). 22 stars, builds with Clang and cmake. The same library is in the Cycles dependency list.</td></tr>
+<tr><td>Mesh clean-up</td><td>meshopt 0.7.0</td><td>Vertex cache, simplification, meshlets (<a href="https://crates.io/crates/meshopt">crates.io</a>).</td></tr>
+</tbody>
+</table>
+<p><strong>Pick: our own half-edge/BMesh-like edit mesh (n-gons), manifold for booleans, OpenSubdiv for subdivision.</strong> Why: no maintained Rust crate gives a poly edit mesh with n-gons; manifold and OpenSubdiv are the proven kernels. Risks: both crates are small projects (13 to 21 stars on the wrapper repos); be ready to write the C wrapper ourselves, as we must for Cycles anyway.</p>
+
+<h2>6. Scripting and plugin API</h2>
+<table>
+<thead><tr><th>Option</th><th>Facts</th><th>Fit</th></tr></thead>
+<tbody>
+<tr><td><strong>PyO3 (embedded Python)</strong></td><td>0.30.1 (2026-10-14), Apache-2.0. CPython 3.9+, supports free-threaded builds since 0.23 (<a href="https://github.com/PyO3/pyo3">README</a>, <a href="https://github.com/PyO3/pyo3/blob/main/guide/src/free-threading.md">free-threading guide</a>)</td><td>Large user base for 3D scripting; a MAXScript-like layer can be a Python module, with a MAXScript-to-Python translator as a later project. Route C means no bpy conflict, so we may pick any Python.</td></tr>
+<tr><td>Rhai</td><td>1.27.0 (2026-10-21), Apache-2.0 per GitHub</td><td>Easy to embed and sandbox. Tiny user base for 3D.</td></tr>
+<tr><td>Lua via mlua</td><td>0.12.2 (2026-10-03), MIT</td><td>Fast and small. Fewer 3D libraries than Python.</td></tr>
+<tr><td>Wasm via wasmtime</td><td>50.0.0 (2026-10-20), Apache-2.0; supports components (<a href="https://github.com/bytecodealliance/wasmtime">README</a>)</td><td>Best sandbox. Needs a defined interface, and hot paths cross a boundary.</td></tr>
+</tbody>
+</table>
+<h3>Rust plugin ABI</h3>
+<p><code>abi_stable</code> 0.11.3 was last released 2023-10-12 (<a href="https://crates.io/crates/abi_stable">crates.io</a>). <code>stabby</code> 72.1.16 (2026-07-20), EPL-2.0 or Apache-2.0, is active but its version number moves fast (<a href="https://crates.io/crates/stabby">crates.io</a>). Rust has no stable ABI of its own. A plain <code>extern "C"</code> table of function pointers with a version field is the simplest and works from any language.</p>
+<p><strong>Pick: embedded Python through PyO3 for scripting; versioned C ABI for native plugins; consider Wasm components later for untrusted plugins.</strong> Risk: Python start-up time and the cost of crossing the GIL for per-vertex scripts. Provide array (numpy-style) APIs, not per-vertex calls.</p>
+
+<h2>7. File formats</h2>
+<table>
+<thead><tr><th>Format</th><th>Crate</th><th>Facts</th></tr></thead>
+<tbody>
+<tr><td><strong>USD (native)</strong></td><td><code>openusd</code> 0.8.0 (2026-10-11), MIT</td><td>Pure Rust, no C++. Reads and writes usda, usdc, usdz; composition (sublayers, references, payloads, variants); layer undo and diff for live sync (<a href="https://github.com/mxpv/openusd">README</a>, <a href="https://github.com/mxpv/openusd/blob/main/ROADMAP.md">ROADMAP</a>). 149 stars, 36.7k downloads (<a href="https://crates.io/crates/openusd">crates.io</a>). No Hydra in Rust. The Cycles Hydra delegate needs the C++ USD library (<a href="https://github.com/blender/cycles/blob/main/BUILDING.md">BUILDING.md</a>). Older Rust bindings <code>usd</code> 0.0.9 date from 2020 (<a href="https://crates.io/crates/usd">crates.io</a>).</td></tr>
+<tr><td>FBX</td><td><code>ufbx</code> 0.11.5 (2026-09-25), MIT or Unlicense</td><td>Rust bindings for the C library ufbx (<a href="https://github.com/ufbx/ufbx-rust">repo</a>, <a href="https://crates.io/crates/ufbx">crates.io</a>). The ufbx C library describes itself as a "single source file FBX loader", so read only; I found no export support (<a href="https://github.com/ufbx/ufbx">ufbx</a>). FBX writing would need another route.</td></tr>
+<tr><td>OBJ</td><td><code>tobj</code> 4.0.5 (2026-08-02), MIT</td><td><a href="https://crates.io/crates/tobj">crates.io</a>. 3.1M downloads.</td></tr>
+<tr><td>glTF</td><td><code>gltf</code> 1.4.1 (2024-05-10), MIT or Apache-2.0</td><td><a href="https://crates.io/crates/gltf">crates.io</a>. Repo pushed 2026-05-11 (<a href="https://github.com/gltf-rs/gltf">repo</a>).</td></tr>
+<tr><td>Alembic</td><td><code>ogawa-rs</code> 0.4.0 (2023)</td><td>Parser for Ogawa Alembic cache files only (<a href="https://crates.io/crates/ogawa-rs">crates.io</a>). Cycles can read Alembic itself (<code>WITH_CYCLES_ALEMBIC</code>, <a href="https://github.com/blender/cycles/blob/main/CMakeLists.txt">CMake</a>); Alembic is BSD-3-Clause. No Rust writer found.</td></tr>
+</tbody>
+</table>
+<p><strong>Pick: USD as the native scene format via <code>openusd</code>; ufbx, tobj and gltf for import and export; Alembic through the C++ library later.</strong> Why: USD composition fits non-destructive layered scenes, the crate has no C++ build, and it is MIT. Risks: the crate is young (v0.8, few users) with USD spline support still planned (<a href="https://github.com/mxpv/openusd/blob/main/ROADMAP.md">ROADMAP</a>). Test round trips against Pixar's C++ tools. Keep the scene graph independent of USD in memory, and use USD for files.</p>
+
+<h2>8. Sources</h2>
+<ul>
+<li>crates.io API, per-crate pages linked above (checked 2026-10-27): <a href="https://crates.io/crates/egui">egui</a>, <a href="https://crates.io/crates/wgpu">wgpu</a>, <a href="https://crates.io/crates/pyo3">pyo3</a>, <a href="https://crates.io/crates/openusd">openusd</a>, <a href="https://crates.io/crates/slint">slint</a>, <a href="https://crates.io/crates/cxx-qt">cxx-qt</a>, <a href="https://crates.io/crates/iced">iced</a>, <a href="https://crates.io/crates/rhai">rhai</a>, <a href="https://crates.io/crates/mlua">mlua</a>, <a href="https://crates.io/crates/wasmtime">wasmtime</a></li>
+<li>GitHub repos and licence files: <a href="https://github.com/emilk/egui">egui</a>, <a href="https://github.com/Adanos020/egui_dock">egui_dock</a>, <a href="https://github.com/rerun-io/rerun">rerun</a>, <a href="https://github.com/slint-ui/slint/blob/master/LICENSE.md">Slint LICENSE</a>, <a href="https://github.com/gfx-rs/wgpu">wgpu</a>, <a href="https://github.com/mxpv/openusd">openusd</a>, <a href="https://github.com/elalish/manifold">manifold</a></li>
+<li><a href="https://slint.dev/pricing">https://slint.dev/pricing</a>, <a href="https://slint.dev/blog/slint-1.18-released">https://slint.dev/blog/slint-1.18-released</a></li>
+<li><a href="https://doc.qt.io/qt-6/lgpl.html">https://doc.qt.io/qt-6/lgpl.html</a></li>
+<li><a href="https://bevy.org/news/bevy-0-14/">https://bevy.org/news/bevy-0-14/</a></li>
+<li><a href="https://github.com/PyO3/pyo3/blob/main/guide/src/free-threading.md">https://github.com/PyO3/pyo3/blob/main/guide/src/free-threading.md</a></li>
+</ul>
+</main>
+</body>
+</html>

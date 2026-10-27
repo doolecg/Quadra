@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadra: Blender and Cycles as the engine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Blender and Cycles as the render engine for Quadra</h1>
+<p>Researched 2026-10-27. Every claim has a link. Anything I could not confirm is marked <span class="unv">UNVERIFIED</span>. Ratings for speed, stability and effort are my own judgement, not measurements.</p>
+
+<div class="first">
+<h2>Read this first</h2>
+<ol>
+<li>Latest stable and current LTS are both <strong>Blender 5.2.3 LTS</strong> (released 2026-10-22). Blender 5.3 is in beta, due about 2026-11-10 (<a href="https://www.blender.org/download/">download page</a>).</li>
+<li>Blender is GPL. Cycles is Apache-2.0 and can be built alone. Anything that links Blender code (bpy, a fork) forces the whole Rust app to be GPL-compatible.</li>
+<li><strong>Recommendation: route C, standalone Cycles linked into the Rust app through a small C++ wrapper.</strong> It keeps the app free of GPL, has no Python or Blender start-up cost, and Cycles already has a session API built for live viewport updates.</li>
+<li>No Rust bindings for Cycles exist on crates.io, and I found no Rust project that embeds Cycles in-process. The Rust projects I found run Blender as a separate sidecar process. We would write and own a thin C++ layer. This is the main cost. (An earlier version of this page cited a <code>cycles-sys</code> URL; that crate does not exist, see section 3.)</li>
+<li>Cycles has no stable public API promise that I could find, and its scene and session code changes often (section 5). Pin one Cycles version and update on purpose. Cycles 5.2.0 is the current tag.</li>
+<li>Blender add-ons will not run under route C. Only a separate Blender process (route B) could run them, and that is kept as an optional import and export helper.</li>
+<li>V-Ray for Blender is a Blender add-on. Route C cannot load it. Using V-Ray would need a separate deal with Chaos for the V-Ray App SDK.</li>
+<li>Licensing points here are a reading of public texts, not legal advice. Ask a UK solicitor before shipping.</li>
+</ol>
+</div>
+
+<h2>1. Versions, cadence and roadmap</h2>
+<table>
+<thead><tr><th>Item</th><th>Finding</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Latest stable</td><td>Blender 5.2.3 LTS, released 2026-10-22</td><td><a href="https://www.blender.org/download/">blender.org/download</a></td></tr>
+<tr><td>Current LTS</td><td>5.2 LTS (first released 2026-07-14, maintained until July 2028). 4.5 LTS is supported until July 2027. 4.2 LTS support ended July 2026.</td><td><a href="https://developer.blender.org/docs/release_notes/">release notes index</a>, <a href="https://developer.blender.org/docs/release_notes/5.2/">5.2 notes</a></td></tr>
+<tr><td>Next release</td><td>5.3 is in beta until 2026-11-04. The download page says it is expected 2026-11-10.</td><td><a href="https://developer.blender.org/docs/release_notes/5.3/">5.3 notes</a>, <a href="https://www.blender.org/download/">download page</a></td></tr>
+<tr><td>After that</td><td>5.4 is in alpha until 2027-02-03. No release date given.</td><td><a href="https://developer.blender.org/docs/release_notes/5.4/">5.4 notes</a></td></tr>
+<tr><td>Cadence</td><td>A release about every four months. One LTS a year, kept for two years.</td><td><a href="https://developer.blender.org/docs/release_notes/">release notes index</a></td></tr>
+<tr><td>Standalone Cycles tags</td><td>v5.2.0, v5.1.0, v5.0.0. Repo last pushed 2026-10-26.</td><td><a href="https://github.com/blender/cycles">github.com/blender/cycles</a> (mirror of <a href="https://projects.blender.org/blender/cycles">projects.blender.org/blender/cycles</a>)</td></tr>
+</tbody>
+</table>
+<h3>Planned next</h3>
+<p>From the <a href="https://www.blender.org/roadmap/">official roadmap</a>: done and shipping in 5.3 are Gaussian Splatting v1 (EEVEE and Cycles), Layered Compositing, LoopTools in core, Ripple Editing, Boolean Carver (Grease Pencil) and Collection Import v1. In development with no date: Layered Actions, Material Lighting Nodes, Fluid Simulation, Texture Layers/Painting/Baking, Modal Node Tools, Dynamic Overrides, OpenPBR Surface Shader, Android support and Panoramic Camera (EEVEE). On hold: iPad support. The Cycles 5.3 notes add Dispersion in the Principled BSDF and a DLSS viewport denoiser (needs NVIDIA driver 620+) (<a href="https://developer.blender.org/docs/release_notes/5.3/cycles/">source</a>).</p>
+
+<h2>2. Languages, GPU backends, devices</h2>
+<table>
+<thead><tr><th>Topic</th><th>Finding</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Core language</td><td>C and C++. The top CMake file sets <code>CMAKE_CXX_STANDARD 20</code> on the 5.2 release branch.</td><td><a href="https://github.com/blender/blender/blob/blender-v5.2-release/CMakeLists.txt">CMakeLists.txt</a></td></tr>
+<tr><td>Cycles C++ standard</td><td>Host code sets <code>CMAKE_CXX_STANDARD 20</code>, but the same file also passes <code>-std=c++17</code> (GCC, Clang, Apple, MSVC) in the compiler flags. GPU kernels (CUDA, HIP, HIPRT) are built with <code>-std=c++17</code>. Which flag the host compiler really uses needs a build log to confirm (not built here): <span class="unv">UNVERIFIED</span>.</td><td><a href="https://github.com/blender/cycles/blob/main/src/cmake/configure_build.cmake">configure_build.cmake</a>, <a href="https://github.com/blender/cycles/blob/main/src/kernel/device/cuda/CMakeLists.txt">CUDA kernel CMake</a></td></tr>
+<tr><td>Bundled Python</td><td>3.13.13 in the 5.2 build recipe. The <code>bpy</code> wheel on PyPI (5.2.3) needs CPython 3.13 only.</td><td><a href="https://github.com/blender/blender/blob/blender-v5.2-release/build_files/build_environment/cmake/versions.cmake">versions.cmake</a>, <a href="https://pypi.org/project/bpy/">PyPI bpy</a></td></tr>
+<tr><td>Vulkan</td><td>In 5.3 the Vulkan backend becomes the default on Windows (not ARM) and Linux. Minimum is lowered to Vulkan 1.1. (5.3 is still beta today.)</td><td><a href="https://developer.blender.org/docs/release_notes/5.3/eevee/">5.3 EEVEE and viewport</a></td></tr>
+<tr><td>OpenGL</td><td>Still present: the 5.3 notes benchmark OpenGL against Vulkan on 5.2.2 and 5.3. No removal date is set. A proposal to remove OpenGL in Blender 6.0 (November 2027) is internal and undecided; virtual texturing is a blocker (Phoronix, 6 Oct 2026). Blender 5.3 makes Vulkan the default on Windows and Linux.</td><td><a href="https://developer.blender.org/docs/release_notes/5.3/eevee/">5.3 notes</a>, <a href="https://www.phoronix.com/news/Blender-6.0-May-Remove-OpenGL">Phoronix</a>, <a href="https://www.linuxtoday.com/blog/blender-5-3-enters-public-beta-testing-with-vulkan-backend-by-default-on-linux/">Linux Today</a></td></tr>
+<tr><td>Metal</td><td>Cycles has a Metal device (CMake option, on by default on Apple). Blender's own Metal viewport backend status in 5.x: no source found that says it is removed or replaced. A 2025 Phoronix report says there were no plans to replace it with Vulkan, but I only saw that through a search summary, so treat as <span class="unv">UNVERIFIED</span>.</td><td><a href="https://github.com/blender/cycles/blob/main/CMakeLists.txt">Cycles CMakeLists.txt</a></td></tr>
+<tr><td>EEVEE</td><td>The "Next" name was dropped in 5.0. The engine id changed from <code>BLENDER_EEVEE_NEXT</code> to <code>BLENDER_EEVEE</code>. 5.3 adds Material Lighting nodes and panoramic cameras.</td><td><a href="https://developer.blender.org/docs/release_notes/5.0/eevee/">5.0 EEVEE</a>, <a href="https://developer.blender.org/docs/release_notes/5.3/eevee/">5.3 EEVEE</a></td></tr>
+<tr><td>Cycles devices</td><td>CPU always. CMake options: CUDA, OptiX (both on), HIP (on), HIPRT (off by default), Metal (on, Apple), oneAPI (off by default). OptiX needs NVIDIA driver 575+ in 5.2.</td><td><a href="https://github.com/blender/cycles/blob/main/CMakeLists.txt">CMake options</a>, <a href="https://developer.blender.org/docs/release_notes/5.2/cycles/">5.2 Cycles notes</a></td></tr>
+</tbody>
+</table>
+
+<h2>3. The four routes</h2>
+<p>Ratings are my judgement. "Effort" is for a small team.</p>
+<table>
+<thead><tr><th>Route</th><th>Speed</th><th>Stability</th><th>Licence result</th><th>Effort</th></tr></thead>
+<tbody>
+<tr><td><strong>A. bpy module via PyO3</strong></td><td>Render speed equals Blender. Scene sync goes through Python objects, so large scenes pay a copy cost. The wheel is 210 to 403 MB.</td><td>Python threads are not supported by Blender; all calls must run from one thread. Only CPython 3.13. One <code>.blend</code> edited at a time.</td><td>GPL-3.0. Whole Rust app must be GPL-compatible.</td><td>Medium</td></tr>
+<tr><td><strong>B. Blender child process over IPC</strong></td><td>Start-up of a full Blender per session. Each scene update crosses a pipe or socket.</td><td>A crash kills only the child. Good isolation.</td><td>Separate GPL program. Likely "aggregation" if communication is simple (section 4).</td><td>Medium</td></tr>
+<tr><td><strong>C. Standalone Cycles via C++ FFI</strong></td><td>Same path-tracing code as Blender. Direct memory access to meshes, no Python. Live viewport via Session reset.</td><td>Cycles has its own app, Hydra delegate and tests. No stable-API promise found. Between the v4.0.0 and v5.2.0 tags, <code>src/scene</code> had 426 commits, <code>src/session</code> 44 and <code>src/hydra</code> 59 (section 5 has the detail). Expect to adapt on every upgrade.</td><td>Apache-2.0 plus its dependencies (section 4). App licence stays ours.</td><td>High at start (C++ wrapper, build of ~10 libraries), then low</td></tr>
+<tr><td><strong>D. Fork Blender, replace UI with Rust</strong></td><td>Best raw reuse, but Blender's own UI, depsgraph and Python are in the way.</td><td>Every upstream release (about every four months) must be merged by us.</td><td>GPL (v2+ source, v3+ binaries).</td><td>Very high. Blender is a huge C++20 code base; the Blender repo has about 112.5 MB of C++ source and 21 MB of Python (GitHub language bytes, not lines), against about 5 MB of C++ in Cycles (<a href="https://api.github.com/repos/blender/blender/languages">Blender</a>, <a href="https://api.github.com/repos/blender/cycles/languages">Cycles</a>, read 2026-10-27).</td></tr>
+</tbody>
+</table>
+<h3>Facts behind the table</h3>
+<ul>
+<li>Route A: the PyPI wheel is GPL-3.0, CPython 3.13 only, Windows x64 and ARM64, Linux x64, macOS ARM64 (<a href="https://pypi.org/project/bpy/">PyPI</a>). Limits: reload fails, one <code>.blend</code> at a time, other GPU Python modules can block Cycles (<a href="https://docs.blender.org/api/current/info_advanced_blender_as_bpy.html">bpy docs</a>). Threads: "Python threads are not supported" (<a href="https://docs.blender.org/api/5.2/info_gotchas_threading.html">threading page</a>). Embedding bpy also fixes our scripting Python at 3.13 and shares one interpreter.</li>
+<li>Route B: the bpy docs themselves suggest running separate instances and talking by <code>multiprocessing</code> (<a href="https://docs.blender.org/api/current/info_advanced_blender_as_bpy.html">bpy docs</a>). 5.2 added <code>gpu.init()</code> for background runs (<a href="https://developer.blender.org/docs/release_notes/5.2/python_api/">Python API 5.2</a>).</li>
+<li>Route C: the Cycles repo builds "as a standalone application or a Hydra render delegate" (<a href="https://github.com/blender/cycles/blob/main/README.md">README</a>). Build uses <code>make update</code> then <code>make</code>, with precompiled libraries for Linux x64, macOS ARM64, Windows x64 and ARM64 (<a href="https://github.com/blender/cycles/blob/main/BUILDING.md">BUILDING.md</a>, <a href="https://github.com/blender/cycles/tree/main/lib">lib folder</a>). Input: XML scenes (<code>cycles scene_monkey.xml</code>) (<a href="https://github.com/blender/cycles/blob/main/README.md">README</a>), with the XML reader in <code>src/app/cycles_xml.cpp</code> (<a href="https://github.com/blender/cycles/tree/main/src/app">src/app</a>). The Hydra delegate lives in <code>src/hydra</code> (files for mesh, material, light, camera, volume, display driver) and is built by default (<code>WITH_CYCLES_HYDRA_RENDER_DELEGATE ON</code>). It needs USD 25.11 or newer, and Houdini 21+ is supported with Houdini's USD (<a href="https://github.com/blender/cycles/blob/main/BUILDING.md">BUILDING.md</a>).</li>
+<li>Existing Rust bindings: none found. The URL <a href="https://crates.io/api/v1/crates/cycles-sys">crates.io/api/v1/crates/cycles-sys</a> answers "crate cycles-sys does not exist" (checked 2026-10-27), so it is evidence of absence, not a crate. The names <code>cycles-rs</code>, <code>cycles-render</code>, <code>cycles-ffi</code> and <code>cycles-render-sys</code> return no crate either; the crates named <code>cycles</code> (a music pattern library) and <code>graph-cycles</code> are unrelated (<a href="https://crates.io/api/v1/crates?q=cycles">search</a>). GitHub search found only sidecar uses: <a href="https://github.com/satishgoda/agentic-3d-stage">agentic-3d-stage</a> (a wgpu viewer with an optional Blender Cycles overlay sidecar), <a href="https://github.com/rustlight-games/groundwork">groundwork</a> (a Rust terrain tool that hands rendering to Cycles) and <a href="https://github.com/sofumel/blenderpulse">blenderpulse</a> (a render-progress overlay). I found no Bevy or Fyrox experiment that embeds Cycles. Other hosts: <a href="https://github.com/tangent-opensource/hdcycles">hdCycles</a> (Tangent Animation, Apache-2.0, 2020) put Cycles into Houdini as a Hydra delegate; the delegate now lives inside Cycles, and BUILDING.md says it needs Houdini 21+ or USD 25.11+ and must be built against the host's own USD (<a href="https://github.com/blender/cycles/blob/main/BUILDING.md">BUILDING.md</a>). A test repo for PyO3 with bpy 5.0.0 exists (<a href="https://github.com/machani-paul007/pyo3-blender-test">machani-paul007/pyo3-blender-test</a>). Tools we would use for FFI: <code>cxx</code> 1.0.205 and <code>bindgen</code> 0.73.2 (<a href="https://crates.io/crates/cxx">crates.io</a>, <a href="https://crates.io/crates/bindgen">crates.io</a>). Because Cycles is a C++ template-heavy API, <code>cxx</code> with a hand-written thin C++ layer is safer than raw <code>bindgen</code>. That is my judgement.</li>
+<li>Route D: Blender is GPL, so a fork stays GPL (<a href="https://www.blender.org/about/license/">Blender licence page</a>).</li>
+</ul>
+
+<h2>4. Licensing</h2>
+<p>This is my reading of public texts and is a legal opinion, not legal advice. UK law applies to the final shipped product, so get a solicitor to check it before release.</p>
+<h3>Blender and Cycles</h3>
+<p>Most Blender source is "GPL version 2 or later"; Cycles is Apache 2.0; all parts are compatible with GPL v3 or later, which is the licence for Blender binaries. Output (images, .blend files) belongs to the user. Published Python scripts using Blender's API must be GPL-compatible (<a href="https://www.blender.org/about/license/">blender.org/about/license</a>). The Cycles repo is flagged Apache-2.0 (<a href="https://github.com/blender/cycles">GitHub</a>). The <code>bpy</code> wheel is GPL-3.0 (<a href="https://pypi.org/project/bpy/">PyPI</a>).</p>
+<h3>GPL consequences</h3>
+<ul>
+<li>Linking: if a library is GPL (not LGPL), the software that links it must be GPL-compatible as a whole (<a href="https://www.gnu.org/licenses/gpl-faq.html#IfLibraryIsGPL">GPL FAQ: IfLibraryIsGPL</a>). Static or dynamic makes no difference (<a href="https://www.gnu.org/licenses/gpl-faq.html#GPLStaticVsDynamic">GPLStaticVsDynamic</a>). So routes A and D make the whole Rust app GPL-compatible.</li>
+<li>Separate process (route B): the FSF says an "aggregate" of separate programs is allowed, and the line between two programs and one depends on "the mechanism of communication" and "the semantics of the communication" (<a href="https://www.gnu.org/licenses/gpl-faq.html#MereAggregation">MereAggregation</a>). Simple fork and exec without "intimate communication" sharing complex data structures keeps programs separate; sharing complex data structures back and forth can make them one program (<a href="https://www.gnu.org/licenses/gpl-faq.html#GPLPlugins">GPLPlugins</a>). A scene graph sent to Blender is a complex data structure, so route B is a grey area. Ask a solicitor.</li>
+<li>Route C: Apache-2.0 code can be combined into a proprietary or any-licence app. Keep the licence text and notices. This is the safest.</li>
+</ul>
+<h3>Licences of Cycles and its dependencies</h3>
+<table>
+<thead><tr><th>Component</th><th>Licence</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Cycles</td><td>Apache-2.0</td><td><a href="https://github.com/blender/cycles">repo</a></td></tr>
+<tr><td>OpenImageIO 3.1.13.1 (in Blender 5.2 recipe)</td><td>Apache-2.0</td><td><a href="https://github.com/AcademySoftwareFoundation/OpenImageIO">repo</a></td></tr>
+<tr><td>OpenShadingLanguage 1.15.3.0</td><td>BSD-3-Clause</td><td><a href="https://github.com/AcademySoftwareFoundation/OpenShadingLanguage">repo</a></td></tr>
+<tr><td>OpenVDB 13.0.0</td><td>Apache-2.0 (the LICENSE file at master and at tag v13.0.0 is the Apache licence)</td><td><a href="https://github.com/AcademySoftwareFoundation/openvdb">repo</a></td></tr>
+<tr><td>Embree 4.4.1</td><td>Apache-2.0</td><td><a href="https://github.com/RenderKit/embree">repo</a></td></tr>
+<tr><td>Open Image Denoise 2.5.0</td><td>Apache-2.0</td><td><a href="https://github.com/RenderKit/oidn">repo</a></td></tr>
+<tr><td>OpenUSD 26.03</td><td>Tomorrow Open Source Technology License 1.0 (Apache-2.0 with a different trademark clause)</td><td><a href="https://github.com/PixarAnimationStudios/OpenUSD/blob/dev/LICENSE.txt">LICENSE.txt</a></td></tr>
+<tr><td>OpenSubdiv 3.7.0</td><td>Same Tomorrow licence</td><td><a href="https://github.com/PixarAnimationStudios/OpenSubdiv/blob/release/LICENSE.txt">LICENSE.txt</a></td></tr>
+<tr><td>OpenColorIO 2.5.0</td><td>BSD-3-Clause</td><td><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">repo</a></td></tr>
+<tr><td>Alembic</td><td>BSD-3-Clause</td><td><a href="https://github.com/alembic/alembic/blob/master/LICENSE.txt">LICENSE.txt</a></td></tr>
+<tr><td>oneTBB 2022.3.0, MaterialX 1.39.4</td><td>Apache-2.0</td><td><a href="https://github.com/uxlfoundation/oneTBB">oneTBB</a>, <a href="https://github.com/AcademySoftwareFoundation/MaterialX">MaterialX</a></td></tr>
+<tr><td>pugixml (XML reader)</td><td>MIT</td><td><a href="https://github.com/zeux/pugixml">repo</a></td></tr>
+<tr><td>Versions above</td><td>Taken from the Blender 5.2 build recipe, not necessarily what standalone Cycles 5.2.0 pins.</td><td><a href="https://github.com/blender/blender/blob/blender-v5.2-release/build_files/build_environment/cmake/versions.cmake">versions.cmake</a></td></tr>
+<tr><td><strong>NVIDIA CUDA Toolkit</strong></td><td><strong>Not permissive.</strong> NVIDIA EULA. Only files listed in Attachment A (for example the CUDA runtime and NVRTC) may ship with an application. The application needs "material additional functionality"; the SDK cannot be shipped stand-alone; for use with NVIDIA GPUs. The EULA does not say whether PTX or cubin made by nvcc may be shipped, so prebuilt kernels need a lawyer's reading: <span class="unv">UNVERIFIED</span></td><td><a href="https://docs.nvidia.com/cuda/eula/index.html">CUDA EULA</a></td></tr>
+<tr><td><strong>NVIDIA OptiX headers</strong></td><td><strong>Not permissive.</strong> NVIDIA "Software Developer Kits, Samples and Tools License Agreement (with distribution rights)". You may ship it in a product in binary form only, for NVIDIA-supported hardware, and you must bind recipients to terms consistent with NVIDIA's. Each header is BSD-3 or NVIDIA Proprietary (see the top of the file). Cycles needs the SDK at build time (<code>OPTIX_ROOT_DIR</code>).</td><td><a href="https://github.com/NVIDIA/optix-dev/blob/main/LICENSE.txt">LICENSE.txt</a>, <a href="https://github.com/NVIDIA/optix-dev/blob/main/license_info.txt">license_info.txt</a>, <a href="https://github.com/blender/cycles/blob/main/CMakeLists.txt">Cycles CMake</a></td></tr>
+<tr><td>AMD HIP</td><td>The HIP source repository is MIT (GitHub). Cycles loads the HIP library at run time through <code>hipew</code>. The AMD HIP SDK and driver runtime terms were not found: <span class="unv">UNVERIFIED</span></td><td><a href="https://github.com/ROCm/HIP">ROCm/HIP</a></td></tr>
+<tr><td>Intel oneAPI / SYCL</td><td>The Level Zero loader is MIT (GitHub). The oneAPI compiler and runtime terms were not checked: <span class="unv">UNVERIFIED</span></td><td><a href="https://github.com/oneapi-src/level-zero">level-zero</a></td></tr>
+<tr><td>Cycles <code>third_party/cuew</code> and <code>hipew</code></td><td>"Modified Apache 2.0 License": Apache text, where "Derivative Works" excludes works that only link to or bind by name to the interfaces. Permissive.</td><td><a href="https://github.com/blender/cycles/blob/main/third_party/cuew/LICENSE">cuew</a>, <a href="https://github.com/blender/cycles/blob/main/third_party/hipew/LICENSE">hipew</a></td></tr>
+<tr><td>Cycles <code>third_party/mikktspace</code></td><td>Apache-2.0 (SPDX header; original 2011 code by Morten S. Mikkelsen). Permissive.</td><td><a href="https://github.com/blender/cycles/blob/main/third_party/mikktspace/mikktspace.hh">mikktspace.hh</a></td></tr>
+<tr><td>Cycles <code>third_party/sky</code></td><td>Mixed, all permissive: BSD-3-Clause (Hosek-Wilkie and Blender files) and MIT (multiple scattering).</td><td><a href="https://github.com/blender/cycles/tree/main/third_party/sky">sky</a></td></tr>
+<tr><td>Cycles <code>third_party/atomic</code></td><td>Code from jemalloc under its BSD-2-Clause style notice (keep the copyright notice and disclaimer). Permissive.</td><td><a href="https://github.com/blender/cycles/blob/main/third_party/atomic/atomic_ops.h">atomic_ops.h</a></td></tr>
+<tr><td>Cycles <code>third_party/libc_compat</code></td><td>One C file and a CMake file; no licence text found in the folder.</td><td><a href="https://github.com/blender/cycles/tree/main/third_party/libc_compat">libc_compat</a></td></tr>
+<tr><td>GUI only: SDL, GLEW</td><td>SDL is zlib (GitHub). GLEW is a modified BSD/MIT mix that GitHub does not classify. Not needed if we skip the Cycles GUI.</td><td><a href="https://github.com/libsdl-org/SDL">SDL</a>, <a href="https://github.com/nigels-com/glew">GLEW</a></td></tr>
+<tr><td>Cycles <code>lib/</code> (precompiled library submodules)</td><td>These are git submodules of Blender's library repos (<code>lib-windows_x64</code> and others), so their contents cannot be listed from the Cycles repo. BUILDING.md names the required libraries (OpenImageIO, TBB) and the optional ones (Alembic, Embree, OpenColorIO, OpenVDB/NanoVDB, OSL, OpenImageDenoise, USD); all are in the table above. Their own sub-dependencies (image codecs and so on): <span class="unv">UNVERIFIED</span></td><td><a href="https://github.com/blender/cycles/blob/main/.gitmodules">.gitmodules</a>, <a href="https://github.com/blender/cycles/blob/main/BUILDING.md">BUILDING.md</a></td></tr>
+</tbody>
+</table>
+<h3>Recommendation: route C</h3>
+<p><strong>Use standalone Cycles (route C).</strong> Why: it is the only route that keeps our app's licence free, avoids a 200 to 400 MB Python wheel and a Python thread limit, and Cycles already exposes a live session. Keep route B as an optional, clearly separate helper later (for example "import .blend"), run as an unmodified Blender the user installs, with only file-based exchange, which is the cleanest form of separation.</p>
+
+<h2>5. Data path from a Rust scene graph to Cycles</h2>
+<table>
+<thead><tr><th>Option</th><th>How</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td>Direct C++ scene API</td><td><code>Scene</code> is a node owner; nodes are made with <code>scene.create_node&lt;T&gt;()</code>, and <code>Scene::need_update()</code>, <code>need_reset()</code> and <code>reset()</code> track change (<a href="https://github.com/blender/cycles/blob/main/src/scene/scene.h">scene.h</a>). A thin wrapper exposes Mesh, Object, Shader, Light, Camera to Rust.</td><td><strong>Pick.</strong> Lowest copy cost: write mesh arrays straight into Cycles buffers.</td></tr>
+<tr><td>USD / Hydra</td><td>The in-tree delegate (<code>src/hydra</code>) renders a USD stage. Needs the C++ USD library, 25.11+ (<a href="https://github.com/blender/cycles/blob/main/BUILDING.md">BUILDING.md</a>). Note: without Houdini's USD, Cycles builds without OSL and NanoVDB.</td><td>Good for import and export, and a fallback path. Heavier to keep live because everything passes through Hydra.</td></tr>
+<tr><td>XML scene file</td><td>The standalone app reads XML (<a href="https://github.com/blender/cycles/blob/main/README.md">README</a>).</td><td>Test and debug only.</td></tr>
+<tr><td>Shared memory</td><td>Only needed if Cycles ran out of process. Not needed for route C.</td><td>Skip.</td></tr>
+</tbody>
+</table>
+<h3>Keeping the viewport live</h3>
+<ul>
+<li><code>Session</code> runs its own render thread. It offers <code>start()</code>, <code>cancel()</code>, <code>reset(session_params, buffer_params)</code>, <code>set_pause()</code>, <code>set_navigating()</code>, <code>set_samples()</code> and <code>ready_to_reset()</code>, and it handles a "delayed reset" and scene updates with locking (<a href="https://github.com/blender/cycles/blob/main/src/session/session.h">session.h</a>).</li>
+<li>Plan: on each edit, change only the touched Cycles nodes, tag them, then call <code>reset()</code> so progressive sampling restarts. Skip full rebuilds. Whether partial per-object updates are cheap enough for 50M+ triangles: <span class="unv">UNVERIFIED</span>, needs a prototype; I found no public measurement. API churn to expect (commit counts from the GitHub API between the tags v4.0.0, v4.5.0 and v5.2.0): <code>src/scene</code> 194 commits to v4.5.0 then 232 to v5.2.0; <code>src/session</code> 27 then 17; <code>src/hydra</code> 25 then 34. Examples: "Refactor: Cycles: Replace new/delete with unique_ptr also for nodes" (<a href="https://github.com/blender/cycles/commit/bb8190d12">bb8190d12</a>) and "Refactor: Cycles: Graphics interop changes" (<a href="https://github.com/blender/cycles/commit/9d6f2727e">9d6f2727e</a>). Counts include fixes and cleanups, so they show churn, not the number of breaking changes. The commit dates in this repo look like mirror sync dates, so I give tags, not dates.</li>
+<li>Display: implement <code>DisplayDriver</code> (methods <code>update_begin</code>, <code>map_texture_buffer</code>, <code>draw</code>, plus graphics-interop hooks) so Cycles draws into our own texture (<a href="https://github.com/blender/cycles/blob/main/src/session/display_driver.h">display_driver.h</a>). Final frames go through an <code>OutputDriver</code> (<a href="https://github.com/blender/cycles/blob/main/src/session/session.h">session.h</a>). The standalone app does the same with OpenGL files in <code>src/app/opengl</code> (<a href="https://github.com/blender/cycles/tree/main/src/app">src/app</a>).</li>
+<li>Denoising in the viewport: OIDN is a build option (<code>WITH_CYCLES_OPENIMAGEDENOISE ON</code>), and 5.3 adds a DLSS viewport denoiser on NVIDIA (<a href="https://developer.blender.org/docs/release_notes/5.3/cycles/">5.3 Cycles</a>).</li>
+</ul>
+
+<h2>6. Add-on compatibility per route</h2>
+<table>
+<thead><tr><th>Route</th><th>What runs</th><th>What we lose</th></tr></thead>
+<tbody>
+<tr><td>A. bpy</td><td>Python add-ons that only use <code>bpy</code> in the same interpreter. Add-ons that need the Blender UI or modal operators are unlikely to work. <span class="unv">UNVERIFIED</span> per add-on.</td><td>Our own UI replaces Blender's, so UI add-ons do not appear. Python threading limits apply.</td></tr>
+<tr><td>B. Child process</td><td>Add-ons installed in that Blender, driven by operator calls. Closest to full compatibility.</td><td>Live link to our scene graph for UI-bound add-ons.</td></tr>
+<tr><td>C. Standalone Cycles</td><td>None. Cycles-only shader nodes can be recreated; OSL scripts run if OSL is enabled (<code>--shadingsys osl</code>, <a href="https://github.com/blender/cycles/blob/main/README.md">README</a>).</td><td>All Blender add-ons, Geometry Nodes, Blender's shader node editor semantics, Blender's own importers.</td></tr>
+<tr><td>D. Fork</td><td>Most add-ons, if we keep Blender's Python API.</td><td>Add-ons that call the Blender UI we removed.</td></tr>
+</tbody>
+</table>
+<p>Add-on licence note: published scripts that use the Blender API must be GPL-compatible (<a href="https://www.blender.org/about/license/">licence page</a>).</p>
+
+<h2>7. V-Ray for Blender (research only)</h2>
+<table>
+<thead><tr><th>Question</th><th>Finding</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Status</td><td>Chaos shipped V-Ray for Blender in July 2025. Update 4 is the latest on Chaos's page and adds Blender 5.2 support.</td><td><a href="https://www.cgchannel.com/2025/07/chaos-releases-v-ray-7-for-blender/">CG Channel 2025</a>, <a href="https://www.chaos.com/vray/blender">Chaos page</a></td></tr>
+<tr><td>Free edition</td><td>Community Edition, free including commercial work. Max 2,560 x 2,560 px, 8-bit output, no .vrscene export, no headless batch or farm use, 90-day licence renewable by survey.</td><td><a href="https://www.cgchannel.com/2026/04/you-can-now-use-v-ray-free-for-commercial-work-in-blender/">CG Channel 2026-04</a></td></tr>
+<tr><td>Paid</td><td>US$33 a month or US$199 a year, named user, rental only. Chaos UK page, read 2026-10-27: £12.50 a month or £150 a year for one licence (V-Ray Solo, all apps: £34.50 a month or £414 a year); prices exclude tax and may change. Free Community Edition: 3-month licence, 2K output, 8-bit. Current release is "update 4" with Blender 5.2 support; the full version number is not shown.</td><td><a href="https://www.cgchannel.com/2026/04/you-can-now-use-v-ray-free-for-commercial-work-in-blender/">CG Channel</a>, <a href="https://www.chaos.com/vray/blender">Chaos</a></td></tr>
+<tr><td>Platforms</td><td>Blender 4.2+, Windows 10+ or macOS 11+, NVIDIA or Apple Silicon GPUs (Linux not listed).</td><td><a href="https://www.cgchannel.com/2026/04/you-can-now-use-v-ray-free-for-commercial-work-in-blender/">CG Channel</a></td></tr>
+<tr><td>How it hooks in</td><td>As a render engine inside Blender. Chaos's page does not describe the install method, so "add-on" is my assumption. <span class="unv">UNVERIFIED</span></td><td><a href="https://www.chaos.com/vray/blender">Chaos</a></td></tr>
+<tr><td>Source licence of the add-on</td><td><span class="unv">UNVERIFIED</span></td><td>None found</td></tr>
+<tr><td>Other ways in</td><td>V-Ray Standalone is a command-line renderer using <code>.vrscene</code>. The V-Ray Application SDK has a Python interface; developer licences are on request. Terms are separate. Chaos's App SDK page lists no price or terms, only "Buy online", "Contact Sales" and a free trial. A third-party contract sample says one SDK licence covers one installation on one computer and Chaos sets the term and may refuse renewal (<a href="https://www.lawinsider.com/clause/special-terms-and-conditions-for-v-ray-application-sdk-use-development/_1">Law Insider sample</a>, not Chaos's own text). Redistribution rights: <span class="unv">UNVERIFIED</span>.</td><td><a href="https://www.chaos.com/developers">Chaos developers</a> (via search result), <a href="https://www.chaos.com/vray/application-sdk">App SDK</a></td></tr>
+</tbody>
+</table>
+<p>Can route C load it? No. V-Ray for Blender runs inside Blender and needs Blender's data. It would work in route B (a user's own Blender with the V-Ray add-on) or route A. For route C we would need either a V-Ray App SDK developer licence from Chaos, or to export <code>.vrscene</code> files, which the free edition forbids. This is a commercial deal question, not a technical one.</p>
+
+<h2>8. Sources</h2>
+<ul>
+<li><a href="https://www.blender.org/download/">https://www.blender.org/download/</a></li>
+<li><a href="https://developer.blender.org/docs/release_notes/">https://developer.blender.org/docs/release_notes/</a> (and 5.0, 5.2, 5.3, 5.4 sub-pages cited above)</li>
+<li><a href="https://www.blender.org/roadmap/">https://www.blender.org/roadmap/</a></li>
+<li><a href="https://www.blender.org/about/license/">https://www.blender.org/about/license/</a></li>
+<li><a href="https://github.com/blender/cycles">https://github.com/blender/cycles</a> and <a href="https://projects.blender.org/blender/cycles">https://projects.blender.org/blender/cycles</a> (README, BUILDING.md, CMakeLists.txt, src/session, src/scene, src/hydra read via GitHub API)</li>
+<li><a href="https://github.com/blender/blender/blob/blender-v5.2-release/build_files/build_environment/cmake/versions.cmake">Blender 5.2 versions.cmake</a></li>
+<li><a href="https://pypi.org/project/bpy/">https://pypi.org/project/bpy/</a></li>
+<li><a href="https://docs.blender.org/api/current/info_advanced_blender_as_bpy.html">https://docs.blender.org/api/current/info_advanced_blender_as_bpy.html</a>, <a href="https://docs.blender.org/api/5.2/info_gotchas_threading.html">threading</a></li>
+<li><a href="https://www.gnu.org/licenses/gpl-faq.html">https://www.gnu.org/licenses/gpl-faq.html</a></li>
+<li><a href="https://www.cgchannel.com/2026/04/you-can-now-use-v-ray-free-for-commercial-work-in-blender/">CG Channel, April 2026</a>, <a href="https://www.chaos.com/vray/blender">chaos.com/vray/blender</a></li>
+<li><a href="https://crates.io/">crates.io API</a> for crate checks, licence repos on GitHub as linked in section 4.</li>
+</ul>
+</main>
+</body>
+</html>
