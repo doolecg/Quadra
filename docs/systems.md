@@ -4,7 +4,7 @@ What each system is, where it lives and how it connects to the others. Update wh
 
 ## quadra_ui
 - **What it does:** docked main window (mockup A layout), command panel, explorers, editors, settings page.
-- **Where:** not built (planned crate `quadra_ui`).
+- **Where:** `crates/quadra_ui` (main window, theme, our own painter-drawn icons). Built so far: the mockup A layout with docking; panels are not wired to a scene yet.
 - **Talks to:** sends commands to quadra_cmd; reads the scene for display.
 
 ## quadra_input
@@ -40,7 +40,7 @@ What each system is, where it lives and how it connects to the others. Update wh
 - **Talks to:** all go through quadra_cmd and quadra_scene.
 
 ## quadra_app
-- **What it does:** the `quadra` program; starts the app. Today it prints the version and licence notice.
+- **What it does:** the `quadra` program; starts the app. Opens the main window from quadra_ui.
 - **Where:** `crates/quadra_app`.
 - **Talks to:** will start quadra_ui and quadra_viewport.
 

@@ -2,7 +2,7 @@
 
 A free, open-source 3D modelling, animation and rendering app for Windows that works like 3ds Max 2026: same layout, same shortcuts, same workflows. Written in Rust, rendering with Cycles.
 
-Early days: milestone 1 (shell and viewport) is in progress. The app does not open a window yet.
+Early days: milestone 1 (shell and viewport) is in progress. The main window opens, but it cannot create or edit anything yet.
 
 ## Get started
 
@@ -14,7 +14,7 @@ cd Quadra
 cargo run -p quadra_app
 ```
 
-That prints the version and the licence notice. The plan and progress live in `docs/bible.html`.
+That opens the main window. The plan and progress live in `docs/bible.html`.
 
 ## Credits
 

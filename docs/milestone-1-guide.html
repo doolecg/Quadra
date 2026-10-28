@@ -54,7 +54,7 @@
 
 <main>
 <h1>Milestone 1 "Shell and viewport"</h1>
-<p class="status">State: In progress: approved 2026-10-27. Step 1 checked. Step 2 (viewport prototype) is ready to test.</p>
+<p class="status">State: In progress: approved 2026-10-27. Steps 1 and 2 checked. Step 3 (main window) is ready to test.</p>
 
 <div class="box first">
   <strong>Read this first</strong>
@@ -112,6 +112,15 @@
     <li>Close the window. The last line is a summary of the whole run.</li>
   </ol>
   <p class="why">This is a best case: one simple shader and one view. The real viewport adds four views, the UI and wireframe, so expect a fraction of this, still far above 60.</p>
+  <h3>Step 3: main window</h3>
+  <ol>
+    <li>Type <code>cargo run --release -p quadra_app</code> and press Enter. The Quadra window opens behind your other windows; click it in the taskbar.</li>
+    <li>Put it next to <code>docs/mockups/a-familiar.html</code>. Menu bar, toolbar, Scene Explorer on the left, four views in the middle, Command Panel on the right, time slider, track bar and status bar should all sit in the same places with the same colours. The ribbon row is left out: it is not in M1.</li>
+    <li>Click the Move, Rotate and Scale buttons: the blue highlight follows. Click a view: the gold border moves to it.</li>
+    <li>Drag the "Command Panel" tab onto the left edge of the window: it docks there. Drag it back.</li>
+    <li>Help &gt; About Quadra shows the licence notice. File &gt; Exit closes the window.</li>
+    <li>Menus and buttons for later steps are greyed out or say which milestone fills them. The views stay empty until step 4.</li>
+  </ol>
 </div>
 
 <h2>4. Review checklist (at the end of M1)</h2>

@@ -9,3 +9,7 @@ repository.workspace = true
 [[bin]]
 name = "quadra"
 path = "src/main.rs"
+
+[dependencies]
+quadra_ui = { path = "../quadra_ui" }
+eframe = { version = "0.36", default-features = false, features = ["wgpu", "default_fonts"] }

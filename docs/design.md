@@ -33,3 +33,6 @@ The why behind decisions, and the results of any tests that informed them. The b
 ## Name: Quadra (2026-10-27)
 - **Decision:** renamed from "4dMax" to "Quadra".
 - **Why:** "Max" risks confusion with Autodesk's trade mark. "Quadra" still needs a UK IPO and EUIPO trade mark check before public release (Apple used it in the 1990s).
+
+## egui 0.36, not 0.37 (2026-10-28)
+egui_dock 0.21.1, the newest release, needs egui 0.36. egui 0.36 still uses wgpu 30, so stepping down one minor version keeps docking with no other cost. Move to 0.37 when egui_dock supports it. Source: https://crates.io/crates/egui_dock/0.21.1/dependencies

@@ -1,0 +1,11 @@
+[package]
+name = "quadra_ui"
+description = "Quadra: main window, panels and theme."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+egui = "0.36"
+egui_dock = "0.21"
